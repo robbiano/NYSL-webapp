@@ -1,0 +1,2399 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles1.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" href="img/nysl_logo.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="img/nysl_logo.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="img/nysl_logo.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="img/nysl_logo.png">
+    <link rel="apple-touch-startup-image" href="img/nysl_logo.png">
+    <meta name="apple-mobile-web-app-title" content="NYSL">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+
+    <link rel="shortcut icon" sizes="196x196" href="icon-196x196.png">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <title>Home</title>
+</head>
+
+<body>
+
+
+    <div id="app">
+
+        <nav class=" navbar navbar-dark navbar-expand-xl fixed-top">
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+                aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                <ul class="navbar-nav mr-auto  mt-lg-0">
+                    <li>
+                        <!-- Example single danger button -->
+                        <div class=" red-button-landscape btn-group mt-3 mr-5 mb-2 d-inline-block">
+                            <button type="button" class="red-button-landscape btn btn-danger dropdown-toggle"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                more
+                            </button>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Separated link</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item active">
+                        <a id="home-btn" class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a id="schoolsInfo-btn" class="nav-link" href="#">Schools Info <span
+                                class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="  nav-item active">
+                        <a class=" schedule-btn nav-link" href="#">Schedule <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li>
+                        <!-- Example single danger button -->
+                        <div class="  btn-group mt-3 mb-2 d-inline-block">
+                            <button type="button" class="red-button btn btn-danger dropdown-toggle"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                more
+                            </button>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Separated link</a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+
+
+                <form class=" form-register mr-4" action="">
+
+                    <div>
+                        <input class="p-1" type="email" placeholder="Email address">
+                        <input class="p-1" type="password" placeholder="Password">
+                        <input class=" mb-1 ml-2 btn btn-success" type="submit" value="Login">
+                    </div>
+
+                    <div class="mt-2">
+                        <input type="checkbox">
+                        <span class="checkbox-text">Remember Me</span>
+                        <a type="button" class="ml-3" href=""> <span class="text-success"> Forgot password ?</span></a>
+                    </div>
+
+                </form>
+            </div>
+        </nav>
+
+        <div id="home-page" class="home-page bg-dark  ">
+
+            <div class="inicio-register-mobile ">
+
+                <div class="d-flex ">
+                    <img class="logo m-auto " src="img/nysl_logo.png" alt="nysl logo">
+                </div>
+
+                <div  class="d-flex mt-5 mb-4">
+                    <button v-show="user == null" type="button" class=" mobile-form-btn login-btn m-auto btn btn-success " data-toggle="modal"
+                        data-target="#exampleModal-login-home-app" data-whatever="@getbootstrap"> <span
+                            class="font-weight-bold">
+                            Login</span>
+                    </button>
+
+                    <div class="modal fade" id="exampleModal-login-home-app" tabindex="-1"
+                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header ">
+                                    <h5 class="modal-title" id="exampleModalLabel">Login</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+
+                                    <form class="px-4 py-3">
+                                        <div class="form-group">
+                                            <label for="exampleDropdownFormEmail1">Email address</label>
+                                            <input type="email" class="form-control" v-model:value="email">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleDropdownFormPassword1">Password</label>
+                                            <input type="password" class="form-control" v-model:value="password">
+                                        </div>
+                                        <div class="form-check">
+                                            <input type="checkbox" class="form-check-input">
+                                            <label class="form-check-label" for="dropdownCheck">
+                                                Remember me
+                                            </label>
+                                            <a href="" class=""> <span class="text-success d-block">Forgot
+                                                    password?</span>
+                                            </a>
+                                        </div>
+                                        <button v-on:click="ingresar" class="btn btn-success mt-2">Sign in</button>
+                                    </form>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div  class="d-flex mt-1 ">
+
+
+                    <button v-show="user == null" type="button" class=" mobile-form-btn login-btn  m-auto  btn  btn-outline-warning"
+                        data-toggle="modal" data-target="#register-modal-home-app" data-whatever="@getbootstrap"> <span
+                            class="font-weight-bold">Register</span>
+                    </button>
+
+
+
+                    <div class="modal fade" id="register-modal-home-app" tabindex="-1"
+                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header ">
+                                    <h5 class="modal-title" id="exampleModalLabel">Register
+                                    </h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+
+                                </div>
+                                <div class="modal-body">
+
+                                    <form class="px-4 py-3">
+                                        <div class="form-group">
+                                            <label for="exampleDropdownFormEmail1">Email address</label>
+                                            <input type="email" v-model:value="email" class="form-control"
+                                                placeholder="">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleDropdownFormPassword1">Password</label>
+                                            <input type="password" v-model:value="password" class="form-control"
+                                                placeholder="">
+                                        </div>
+                                        <button v-on:click="registrar" class="btn btn-success mt-2 ">Register
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <button v-show="user == null" class="btn btn-link d-flex pt-4 m-auto text-danger " v-on:click="ingresarGoogle">Sign In With Google
+                </button>
+
+                <div v-show="user != null">
+
+                    <button class="btn btn-link d-flex m-auto" v-on:click="salir">sign out</button>
+
+                    <h5 class=" text-center text-primary p-3">{{user != null ? user.email : '' }}</h5>
+
+                </div>
+
+
+            </div>
+
+
+
+            <div class="main-content-web container-fluid">
+
+                <div class="row">
+                    <div class="col-12 jumbotron jumbotron-fluid p-3">
+                        <div class="card-deck ">
+                            <h1 class="display-4">Northside Youth Soccer League</h1>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+
+                    <div class=" col-5 pl-5 ">
+                        <div class="  card bg-transparent border-success mb-3" style="max-width: 18rem;">
+                            <div class="card-header text-success border-success">Upcoming Events</div>
+                            <div class="card-body text-success">
+                                <h5 class="card-title">August 4</h5>
+                                <p class="card-text">NYSL Fundraiser.</p>
+                                <h5 class="card-title">August 16</h5>
+                                <p class="card-text">Season Kick-off: Meet the Teams.</p>
+                                <h5 class="card-title">September 1</h5>
+                                <p class="card-text">
+                                    First Game of the Season>(Check <a class="text-warning" href="Schedule.html">Game
+                                        Schedule
+                                    </a>for details).</p>
+                            </div>
+                        </div>
+                        <div class="mt-4  card bg-transparent border-warning mb-3" style="max-width: 18rem;">
+                            <div class="card-header text-warning  border-warning">Contact
+                            </div>
+                            <div class="card-body text-warning">
+                                <h5 class="card-title">Please email us at <a class="text-success"
+                                        href="mailto:nysl@chisoccer.org">nysl@chisoccer.org</a>
+                                </h5>
+                                <p class="card-text">We will reply to your email as soon as we can.</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col-7 ">
+                        <h1 class="text-white display-3 m-5 ">Don't Have <br> An Account Yet ?</h1>
+
+                        <button type="button"
+                            class="btn btn-outline-warning m-5 w-25 p-2 font-weight-bold ">Visitor</button>
+
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-warning  w-25 p-2 font-weight-bold " data-toggle="modal"
+                            data-target="#register-desktop">Register</button>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="register-desktop" tabindex="-1" aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header ">
+                                        <h5 class="modal-title" id="exampleModalLabel">Register
+                                        </h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+
+                                        <form class="px-4 py-3">
+                                            <div class="form-group">
+
+                                                <label for="">Name</label>
+                                                <input type="text" class="form-control" id="Name">
+                                                <label for="">Last name</label>
+                                                <input type="text" class="form-control" id="Last Name">
+
+                                                <label for="exampleDropdownFormEmail1">Email address</label>
+                                                <input type="email" class="form-control" placeholder="">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="exampleDropdownFormPassword1">Password</label>
+                                                <input type="password" class="form-control" placeholder="">
+
+                                                <label for="exampleDropdownFormPassword1">Confirm Password</label>
+                                                <input type="password" class="form-control" placeholder="">
+
+                                            </div>
+
+                                            <button type="submit" class="btn btn-success mt-2">Register</button>
+                                        </form>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div id="schoolsInfo-page" class="">
+            <div class=" schedule-banner pt-5">
+
+                <h1 class="display-4">Schools Information</h1>
+                <p class="lead">Northside Youth Soccer League</p>
+
+            </div>
+
+            <div id="carouselExampleIndicators" class="carousel slide  " data-ride="" data-interval="false">
+
+                <div class="carousel-inner ">
+
+                    <div class="carousel-item active ">
+
+                        <div class="m-3 card card-info">
+
+                            <img class="card-infi-pic" src="img/2018-01-26.jpg" class="card-img-top"
+                                alt="aj katzenmaier elementary school">
+                            <div class="card-body">
+                                <h5 class="card-title">Aj Katzenmaier Elementary </h5>
+                            </div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">
+                                    <strong>Location: </strong>
+                                    <a class="maplink"
+                                        href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2969.656836443422!2d-87.6312603845582!3d41.90023667922044!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd34e07f6bac3%3A0x68a82e5d59952c86!2s24+W+Walton+St%2C+Chicago%2C+IL+60610%2C+Estats+Units+d'Am%C3%A8rica!5e0!3m2!1sca!2ses!4v1516266506557"
+                                        target="iframe_1">
+                                        <p class="text-center">24 W. Walton St., Chicago, IL 60610</p>
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="p-3">
+                                <button type="button" class="w-100 mt-3 mb-3 btn btn-primary" data-toggle="modal"
+                                    data-target="#exampleModal-map-carusel-katzenmaier">
+                                    Map
+                                </button>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="modal fade" id="exampleModal-map-carusel-katzenmaier" tabindex="-1"
+                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content ">
+
+                                <div class="modal-body">
+
+                                    <div>
+                                        <iframe
+                                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2969.6540604261418!2d-87.63123908528188!3d41.90029637200517!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd34e07f6bac3%3A0x68a82e5d59952c86!2s24%20W%20Walton%20St%2C%20Chicago%2C%20IL%2060610%2C%20EE.%20UU.!5e0!3m2!1ses!2sar!4v1599949318601!5m2!1ses!2sar"
+                                            width="100%" height="500" frameborder="0" style="border:0;" name="iframe_1"
+                                            allowfullscreen="">
+                                        </iframe>
+                                        <a class="btn btn-primary w-50 mt-3"
+                                            href="https://www.google.com/maps/dir//24+W+Walton+St,+Chicago,+IL+60610,+EE.+UU./@41.900292,-87.62905,15z/data=!4m9!4m8!1m0!1m5!1m1!1s0x880fd34e07f6bac3:0x68a82e5d59952c86!2m2!1d-87.6290504!2d41.9002924!3e0?hl=es-ES">Go</a>
+
+                                        <button type="button" class="btn btn-danger mt-3 w-25"
+                                            data-dismiss="modal">Close</button>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="carousel-item ">
+
+                        <div class="m-3 card card-info">
+                            <img class="card-infi-pic" src="img/greenbay.jpg" class="card-img-top"
+                                alt="aj katzenmaier elementary school">
+                            <div class="card-body">
+                                <h5 class="card-title">Greenbay Elementary </h5>
+                            </div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">
+                                    <strong>Location: </strong>
+                                    <a class="maplink"
+                                        href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2969.0250102229547!2d-87.64023704886938!3d41.913821071054805!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd34073f306a3%3A0x9e1726bbf8f23f0e!2s1734+N+Orleans+St%2C+Chicago%2C+IL+60614%2C+Estats+Units+d'Am%C3%A8rica!5e0!3m2!1sca!2ses!4v1516268459315"
+                                        target="iframe_2">
+                                        <p class="text-center">1734 N. Orleans St., Chicago, IL 60614</p>
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="p-3">
+                                <button type="button" class="w-100 mt-3 mb-3 btn btn-primary" data-toggle="modal"
+                                    data-target="#exampleModal-map-carusel-greenbay">
+                                    Map
+                                </button>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="modal fade" id="exampleModal-map-carusel-greenbay" tabindex="-1"
+                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content ">
+
+                                <div class="modal-body">
+
+                                    <div>
+                                        <iframe
+                                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2969.025698674518!2d-87.64002798528132!3d41.91380627115933!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd34073f306a3%3A0x9e1726bbf8f23f0e!2s1734%20N%20Orleans%20St%2C%20Chicago%2C%20IL%2060614%2C%20EE.%20UU.!5e0!3m2!1ses!2sar!4v1599952381178!5m2!1ses!2sar"
+                                            width="100%" height="500" frameborder="0" style="border:0;"
+                                            allowfullscreen="" aria-hidden="false" tabindex="0" name="iframe_2">
+                                        </iframe>
+                                        <a class="btn btn-primary w-50 mt-3"
+                                            href="https://www.google.com/maps/dir//1734+N+Orleans+St,+Chicago,+IL+60614,+EE.+UU./@41.9138023,-87.6400333,17z/data=!4m9!4m8!1m0!1m5!1m1!1s0x880fd34073f306a3:0x9e1726bbf8f23f0e!2m2!1d-87.6378393!2d41.9138023!3e0?hl=es-ES">Go</a>
+
+                                        <button type="button" class="btn btn-danger mt-3 w-25"
+                                            data-dismiss="modal">Close</button>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item ">
+
+                        <div class="m-3 card card-info">
+                            <a href=""></a>
+                            <img class="card-infi-pic" src="img/howard yeager.jpg" class="card-img-top"
+                                alt="Howard A Yeager elementary school">
+                            <div class="card-body">
+                                <h5 class="card-title">Howard A Yeager </h5>
+                            </div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">
+                                    <strong>Location: </strong>
+                                    <a class="maplink"
+                                        href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2968.585497389483!2d-87.6651199488691!3d41.92326857046301!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd2e37f9b8d2d%3A0x62ad8b907dd755d6!2s2245+N+Southport+Ave%2C+Chicago%2C+IL+60614%2C+Estats+Units+d'Am%C3%A8rica!5e0!3m2!1sca!2ses!4v1516268626037"
+                                        target="iframe_3">
+                                        <p class="text-center">2245 N. Southport Ave., Chicago, IL 60614</p>
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="p-3">
+                                <button type="button" class="w-100 mt-3 mb-3 btn btn-primary" data-toggle="modal"
+                                    data-target="#exampleModal-map-caousel-Howard">
+                                    Map
+                                </button>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="modal fade" id="exampleModal-map-caousel-Howard" tabindex="-1"
+                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content ">
+
+                                <div class="modal-body">
+
+                                    <div>
+                                        <iframe
+                                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2968.590722234574!2d-87.66531398528099!3d41.923156270573635!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd2e37f9b8d2d%3A0x62ad8b907dd755d6!2s2245%20N%20Southport%20Ave%2C%20Chicago%2C%20IL%2060614%2C%20EE.%20UU.!5e0!3m2!1ses!2sar!4v1599952594878!5m2!1ses!2sar"
+                                            width="100%" height="500" frameborder="0" style="border:0;"
+                                            allowfullscreen="" aria-hidden="false" tabindex="0" name="iframe_3">
+                                        </iframe>
+                                        <a class="btn btn-primary w-50 mt-3"
+                                            href="https://www.google.com/maps/dir//Howard+A+Yeager+Elementary,+W+Belden+Ave,+Chicago,+IL+60614,+Estados+Unidos/@41.923261,-87.6651155,17z/data=!4m9!4m8!1m0!1m5!1m1!1s0x880fd2e37f852467:0xb6cb22b2f0358874!2m2!1d-87.6629215!2d41.923261!3e0?hl=es-ES">Go</a>
+
+                                        <button type="button" class="btn btn-danger mt-3 w-25"
+                                            data-dismiss="modal">Close</button>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="carousel-item ">
+
+                        <div class="m-3 card card-info">
+                            <img class="card-infi-pic" src="img/Marjorie P Hart.jpg" class="card-img-top"
+                                alt="Marjorie P Hart elementary school">
+                            <div class="card-body">
+                                <h5 class="card-title">Marjorie P Hart</h5>
+                            </div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">
+                                    <strong>Location: </strong>
+                                    <a class="maplink"
+                                        href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2968.2884810511996!2d-87.648164648869!3d41.929652070063376!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd30f2630e551%3A0x3e719e44a5cef714!2s2625+N+Orchard+St%2C+Chicago%2C+IL+60614%2C+Estats+Units+d'Am%C3%A8rica!5e0!3m2!1sca!2ses!4v1516268730624"
+                                        target="iframe_4">
+                                        <p class="text-center">2625 N. Orchard St., Chicago, IL 60614</p>
+                                    </a>
+                                </li>
+                            </ul>
+
+                            <div class="p-3">
+                                <button type="button" class="w-100 mt-3 mb-3 btn btn-primary" data-toggle="modal"
+                                    data-target="#exampleModal-map-Marjorie">
+                                    Map
+                                </button>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="modal fade" id="exampleModal-map-Marjorie" tabindex="-1"
+                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content ">
+
+                                <div class="modal-body">
+
+                                    <div>
+                                        <iframe
+                                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2968.2917289530665!2d-87.64808628528077!3d41.92958227017117!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd30f2630e551%3A0x3e719e44a5cef714!2s2625%20N%20Orchard%20St%2C%20Chicago%2C%20IL%2060614%2C%20EE.%20UU.!5e0!3m2!1ses!2sar!4v1599952703320!5m2!1ses!2sar"
+                                            width="100%" height="500" frameborder="0" style="border:0;"
+                                            allowfullscreen="" aria-hidden="false" tabindex="0" name="iframe_4">
+                                        </iframe>
+                                        <a class="btn btn-primary w-50 mt-3"
+                                            href="https://www.google.com/maps/dir//2625+N+Orchard+St,+Chicago,+IL+60614,+EE.+UU./@41.9295783,-87.6480916,17z/data=!4m9!4m8!1m0!1m5!1m1!1s0x880fd30f2630e551:0x3e719e44a5cef714!2m2!1d-87.6458976!2d41.9295783!3e0?hl=es-ES">Go</a>
+
+                                        <button type="button" class="btn btn-danger mt-3 w-25"
+                                            data-dismiss="modal">Close</button>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="carousel-item ">
+
+                        <div class="m-3 card card-info">
+                            <img class="card-infi-pic" src="img/north elementary.jpg" class="card-img-top"
+                                alt="North Elementary school">
+                            <div class="card-body">
+                                <h5 class="card-title">North Elementary </h5>
+                            </div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">
+                                    <strong>Location: </strong>
+                                    <a class="maplink"
+                                        href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2969.3362420820845!2d-87.64836374886953!3d41.90712997147392!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd33af13a8945%3A0xb6ad1ec2b6f379ba!2s1409+N+Ogden+Ave%2C+Chicago%2C+IL+60610%2C+Estats+Units+d'Am%C3%A8rica!5e0!3m2!1sca!2ses!4v1516268816053"
+                                        target="iframe_5">
+                                        <p class="text-center">1409 N. Ogden Ave., Chicago, IL 60610</p>
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="p-3">
+                                <button type="button" class="w-100 mt-3 mb-3 btn btn-primary" data-toggle="modal"
+                                    data-target="#exampleModal-map-north">
+                                    Map
+                                </button>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="modal fade" id="exampleModal-map-north" tabindex="-1"
+                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content ">
+
+                                <div class="modal-body">
+
+                                    <div>
+                                        <iframe
+                                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2969.3562837029785!2d-87.64765898528162!3d41.90669907160427!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd33a674ca85d%3A0x9940c7163c4950c5!2s1409%20N%20Ogden%20Ave%2C%20Chicago%2C%20IL%2060610%2C%20EE.%20UU.!5e0!3m2!1ses!2sar!4v1599952881900!5m2!1ses!2sar"
+                                            width="100%" height="500" frameborder="0" style="border:0;"
+                                            allowfullscreen="" aria-hidden="false" tabindex="0" name="iframe_5">
+                                        </iframe>
+                                        <a class="btn btn-primary w-50 mt-3"
+                                            href="https://www.google.com/maps/dir//1409+N+Ogden+Ave,+Chicago,+IL+60610,+EE.+UU./@41.9066951,-87.6476643,17z/data=!4m9!4m8!1m0!1m5!1m1!1s0x880fd33a674ca85d:0x9940c7163c4950c5!2m2!1d-87.6454703!2d41.9066951!3e0?hl=es-ES">Go
+                                        </a>
+                                        <button type="button" class="btn btn-danger mt-3 w-25"
+                                            data-dismiss="modal">Close</button>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="carousel-item ">
+
+                        <div class="m-3 card card-info">
+                            <img class="card-infi-pic" src="img/south elementary.jpg" class="card-img-top"
+                                alt="aj katzenmaier elementary school">
+                            <div class="card-body">
+                                <h5 class="card-title">South Elementary </h5>
+                            </div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">
+                                    <strong>Location: </strong>
+                                    <a class="maplink"
+                                        href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2968.7489558126917!2d-87.65355064886923!3d41.91975517068314!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd3196fb41dc7%3A0x970be7f7d6336df5!2s2101+N+Fremont+St%2C+Chicago%2C+IL+60614%2C+Estats+Units+d'Am%C3%A8rica!5e0!3m2!1sca!2ses!4v1516268909486"
+                                        target="iframe_7">
+                                        <p class="text-center">2101 N. Fremont St., Chicago, IL 60614</p>
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="p-3">
+                                <button type="button" class="w-100 mt-3 mb-3 btn btn-primary" data-toggle="modal"
+                                    data-target="#exampleModal-map-South">
+                                    Map
+                                </button>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="modal fade" id="exampleModal-map-South" tabindex="-1"
+                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content ">
+
+                                <div class="modal-body">
+
+                                    <div>
+                                        <div>
+                                            <iframe
+                                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2968.747764826545!2d-87.65355538528111!3d41.91978077078517!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd3196fb41dc7%3A0x970be7f7d6336df5!2s2101%20N%20Fremont%20St%2C%20Chicago%2C%20IL%2060614%2C%20EE.%20UU.!5e0!3m2!1ses!2sar!4v1599953079038!5m2!1ses!2sar"
+                                                width="100%" height="500" frameborder="0" style="border:0;"
+                                                allowfullscreen="" aria-hidden="false" tabindex="0" name="iframe_7">
+                                            </iframe>
+                                            <a class="btn btn-primary w-50 mt-3"
+                                                href="https://www.google.com/maps/dir//St+James+Lutheran+School,+2101+N+Fremont+St,+Chicago,+IL+60614,+Estados+Unidos/@41.9201486,-87.6528695,17z/data=!4m9!4m8!1m0!1m5!1m1!1s0x880fd3196e269cbf:0x1caabcbc4893f0da!2m2!1d-87.6506755!2d41.9201486!3e0?hl=es-ES">Go
+                                            </a>
+
+                                            <button type="button" class="btn btn-danger mt-3 w-25"
+                                                data-dismiss="modal">Close
+                                            </button>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon mb-4 p-4" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon mb-4 p-4" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="m-3 card-school-x2">
+
+                <div class="card-deck">
+
+                    <div class="mt-4 card-info card">
+
+                        <img class="card-infi-pic" src="img/2018-01-26.jpg" class="card-img-top"
+                            alt="aj katzenmaier elementary school">
+                        <div class="card-body">
+                            <h5 class="card-title">Aj Katzenmaier Elementary </h5>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <strong>Location: </strong>
+                                <a class="maplink"
+                                    href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2969.656836443422!2d-87.6312603845582!3d41.90023667922044!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd34e07f6bac3%3A0x68a82e5d59952c86!2s24+W+Walton+St%2C+Chicago%2C+IL+60610%2C+Estats+Units+d'Am%C3%A8rica!5e0!3m2!1sca!2ses!4v1516266506557"
+                                    target="iframe_1">
+                                    <p class="text-center">24 W. Walton St., Chicago, IL 60610</p>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="card-body">
+
+                            <a class=" mb-3 btn btn-primary " data-toggle="collapse"
+                                href="#collapseExample-Katzenmaier-x2" role="button" aria-expanded="false"
+                                aria-controls="collapseExample-Katzenmaier-x2">
+                                Map
+                            </a>
+
+
+                            <div class="collapse" id="collapseExample-Katzenmaier-x2">
+                                <div>
+                                    <iframe
+                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2969.6540604261418!2d-87.63123908528188!3d41.90029637200517!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd34e07f6bac3%3A0x68a82e5d59952c86!2s24%20W%20Walton%20St%2C%20Chicago%2C%20IL%2060610%2C%20EE.%20UU.!5e0!3m2!1ses!2sar!4v1599949318601!5m2!1ses!2sar"
+                                        width="100%" height="300" frameborder="0" style="border:0;" name="iframe_1"
+                                        allowfullscreen="">
+                                    </iframe>
+                                    <a class="btn btn-primary w-100 mt-3"
+                                        href="https://www.google.com/maps/dir//24+W+Walton+St,+Chicago,+IL+60610,+EE.+UU./@41.900292,-87.62905,15z/data=!4m9!4m8!1m0!1m5!1m1!1s0x880fd34e07f6bac3:0x68a82e5d59952c86!2m2!1d-87.6290504!2d41.9002924!3e0?hl=es-ES">Go</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-4 card-info card">
+                        <img class="card-infi-pic" src="img/greenbay.jpg" class="card-img-top"
+                            alt="aj katzenmaier elementary school">
+                        <div class="card-body">
+                            <h5 class="card-title">Greenbay Elementary </h5>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <strong>Location: </strong>
+                                <a class="maplink"
+                                    href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2969.0250102229547!2d-87.64023704886938!3d41.913821071054805!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd34073f306a3%3A0x9e1726bbf8f23f0e!2s1734+N+Orleans+St%2C+Chicago%2C+IL+60614%2C+Estats+Units+d'Am%C3%A8rica!5e0!3m2!1sca!2ses!4v1516268459315"
+                                    target="iframe_2">
+                                    <p class="text-center">1734 N. Orleans St., Chicago, IL 60614</p>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="card-body">
+
+                            <a class="mb-3 btn btn-primary" data-toggle="collapse" href="#collapseExample-greenbay-x2"
+                                role="button" aria-expanded="false" aria-controls="collapseExample-greenbay-x2">
+                                Map
+                            </a>
+
+                            <div class="collapse" id="collapseExample-greenbay-x2">
+                                <div>
+                                    <iframe
+                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2969.025698674518!2d-87.64002798528132!3d41.91380627115933!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd34073f306a3%3A0x9e1726bbf8f23f0e!2s1734%20N%20Orleans%20St%2C%20Chicago%2C%20IL%2060614%2C%20EE.%20UU.!5e0!3m2!1ses!2sar!4v1599952381178!5m2!1ses!2sar"
+                                        width="100%" height="300" frameborder="0" style="border:0;" allowfullscreen=""
+                                        aria-hidden="false" tabindex="0" name="iframe_2">
+                                    </iframe>
+                                    <a class="btn btn-primary w-100 mt-3"
+                                        href="https://www.google.com/maps/dir//1734+N+Orleans+St,+Chicago,+IL+60614,+EE.+UU./@41.9138023,-87.6400333,17z/data=!4m9!4m8!1m0!1m5!1m1!1s0x880fd34073f306a3:0x9e1726bbf8f23f0e!2m2!1d-87.6378393!2d41.9138023!3e0?hl=es-ES">Go
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="card-deck">
+
+                    <div class="mt-4 card-info card">
+                        <a href=""></a>
+                        <img class="card-infi-pic" src="img/howard yeager.jpg" class="card-img-top"
+                            alt="aj katzenmaier elementary school">
+                        <div class="card-body">
+                            <h5 class="card-title">Howard A Yeager </h5>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <strong>Location: </strong>
+                                <a class="maplink"
+                                    href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2968.585497389483!2d-87.6651199488691!3d41.92326857046301!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd2e37f9b8d2d%3A0x62ad8b907dd755d6!2s2245+N+Southport+Ave%2C+Chicago%2C+IL+60614%2C+Estats+Units+d'Am%C3%A8rica!5e0!3m2!1sca!2ses!4v1516268626037"
+                                    target="iframe_3">
+                                    <p class="text-center">2245 N. Southport Ave., Chicago, IL 60614</p>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="card-body">
+                            <a class="mb-3 btn btn-primary" data-toggle="collapse" href="#collapseExample-Howard-x2"
+                                role="button" aria-expanded="false" aria-controls="collapseExample-Howard-x2">
+                                Map
+                            </a>
+                            <div class="collapse" id="collapseExample-Howard-x2">
+                                <div>
+                                    <iframe
+                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2968.590722234574!2d-87.66531398528099!3d41.923156270573635!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd2e37f9b8d2d%3A0x62ad8b907dd755d6!2s2245%20N%20Southport%20Ave%2C%20Chicago%2C%20IL%2060614%2C%20EE.%20UU.!5e0!3m2!1ses!2sar!4v1599952594878!5m2!1ses!2sar"
+                                        width="100%" height="300" frameborder="0" style="border:0;" allowfullscreen=""
+                                        aria-hidden="false" tabindex="0" name="iframe_3">
+                                    </iframe>
+                                    <a class="btn btn-primary w-100 mt-3"
+                                        href="https://www.google.com/maps/dir//Howard+A+Yeager+Elementary,+W+Belden+Ave,+Chicago,+IL+60614,+Estados+Unidos/@41.923261,-87.6651155,17z/data=!4m9!4m8!1m0!1m5!1m1!1s0x880fd2e37f852467:0xb6cb22b2f0358874!2m2!1d-87.6629215!2d41.923261!3e0?hl=es-ES">Go</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-4 card-info card">
+                        <img class="card-infi-pic" src="img/Marjorie P Hart.jpg" class="card-img-top"
+                            alt="Marjorie P Hart elementary school">
+                        <div class="card-body">
+                            <h5 class="card-title">Marjorie P Hart</h5>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <strong>Location: </strong>
+                                <a class="maplink"
+                                    href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2968.2884810511996!2d-87.648164648869!3d41.929652070063376!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd30f2630e551%3A0x3e719e44a5cef714!2s2625+N+Orchard+St%2C+Chicago%2C+IL+60614%2C+Estats+Units+d'Am%C3%A8rica!5e0!3m2!1sca!2ses!4v1516268730624"
+                                    target="iframe_4">
+                                    <p class="text-center">2625 N. Orchard St., Chicago, IL 60614</p>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="card-body">
+
+                            <a class="mb-3 btn btn-primary" data-toggle="collapse" href="#collapseExample-Marjorie-x2"
+                                role="button" aria-expanded="false" aria-controls="collapseExample-Marjorie-x2">
+                                Map
+                            </a>
+
+                            <div class="collapse" id="collapseExample-Marjorie-x2">
+                                <div>
+                                    <iframe
+                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2968.2917289530665!2d-87.64808628528077!3d41.92958227017117!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd30f2630e551%3A0x3e719e44a5cef714!2s2625%20N%20Orchard%20St%2C%20Chicago%2C%20IL%2060614%2C%20EE.%20UU.!5e0!3m2!1ses!2sar!4v1599952703320!5m2!1ses!2sar"
+                                        width="100%" height="300" frameborder="0" style="border:0;" allowfullscreen=""
+                                        aria-hidden="false" tabindex="0" name="iframe_4">
+                                    </iframe>
+                                    <a class="btn btn-primary w-100 mt-3"
+                                        href="https://www.google.com/maps/dir//2625+N+Orchard+St,+Chicago,+IL+60614,+EE.+UU./@41.9295783,-87.6480916,17z/data=!4m9!4m8!1m0!1m5!1m1!1s0x880fd30f2630e551:0x3e719e44a5cef714!2m2!1d-87.6458976!2d41.9295783!3e0?hl=es-ES">Go</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="card-deck">
+
+                    <div class="mt-4 card-info card">
+                        <img class="card-infi-pic" src="img/north elementary.jpg" class="card-img-top"
+                            alt="North Elementary school">
+                        <div class="card-body">
+                            <h5 class="card-title">North Elementary </h5>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <strong>Location: </strong>
+                                <a class="maplink"
+                                    href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2969.3362420820845!2d-87.64836374886953!3d41.90712997147392!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd33af13a8945%3A0xb6ad1ec2b6f379ba!2s1409+N+Ogden+Ave%2C+Chicago%2C+IL+60610%2C+Estats+Units+d'Am%C3%A8rica!5e0!3m2!1sca!2ses!4v1516268816053"
+                                    target="iframe_5">
+                                    <p class="text-center">1409 N. Ogden Ave., Chicago, IL 60610</p>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="card-body">
+
+                            <a class="mb-3 btn btn-primary" data-toggle="collapse" href="#collapseExample-North-x2"
+                                role="button" aria-expanded="false" aria-controls="collapseExample-North-x2">
+                                Map
+                            </a>
+
+                            <div class="collapse" id="collapseExample-North-x2">
+                                <div>
+                                    <iframe
+                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2969.3562837029785!2d-87.64765898528162!3d41.90669907160427!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd33a674ca85d%3A0x9940c7163c4950c5!2s1409%20N%20Ogden%20Ave%2C%20Chicago%2C%20IL%2060610%2C%20EE.%20UU.!5e0!3m2!1ses!2sar!4v1599952881900!5m2!1ses!2sar"
+                                        width="100%" height="300" frameborder="0" style="border:0;" allowfullscreen=""
+                                        aria-hidden="false" tabindex="0" name="iframe_5">
+                                    </iframe>
+                                    <a class="btn btn-primary w-100 mt-3"
+                                        href="https://www.google.com/maps/dir//1409+N+Ogden+Ave,+Chicago,+IL+60610,+EE.+UU./@41.9066951,-87.6476643,17z/data=!4m9!4m8!1m0!1m5!1m1!1s0x880fd33a674ca85d:0x9940c7163c4950c5!2m2!1d-87.6454703!2d41.9066951!3e0?hl=es-ES">Go</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-4 card-info card">
+                        <img class="card-infi-pic" src="img/south elementary.jpg" class="card-img-top"
+                            alt="aj katzenmaier elementary school">
+                        <div class="card-body">
+                            <h5 class="card-title">South Elementary </h5>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <strong>Location: </strong>
+                                <a class="maplink"
+                                    href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2968.7489558126917!2d-87.65355064886923!3d41.91975517068314!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd3196fb41dc7%3A0x970be7f7d6336df5!2s2101+N+Fremont+St%2C+Chicago%2C+IL+60614%2C+Estats+Units+d'Am%C3%A8rica!5e0!3m2!1sca!2ses!4v1516268909486"
+                                    target="iframe_7">
+                                    <p class="text-center">2101 N. Fremont St., Chicago, IL 60614</p>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="card-body">
+
+                            <a class="mb-3 btn btn-primary" data-toggle="collapse" href="#collapseExample-south-x2"
+                                role="button" aria-expanded="false" aria-controls="collapseExampl-south-x2">
+                                Map
+                            </a>
+
+                            <div class="collapse" id="collapseExample-south-x2">
+                                <div>
+                                    <iframe
+                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2968.747764826545!2d-87.65355538528111!3d41.91978077078517!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd3196fb41dc7%3A0x970be7f7d6336df5!2s2101%20N%20Fremont%20St%2C%20Chicago%2C%20IL%2060614%2C%20EE.%20UU.!5e0!3m2!1ses!2sar!4v1599953079038!5m2!1ses!2sar"
+                                        width="100%" height="300" frameborder="0" style="border:0;" allowfullscreen=""
+                                        aria-hidden="false" tabindex="0" name="iframe_7">
+                                    </iframe>
+                                    <a class="btn btn-primary w-100 mt-3"
+                                        href="https://www.google.com/maps/dir//St+James+Lutheran+School,+2101+N+Fremont+St,+Chicago,+IL+60614,+Estados+Unidos/@41.9201486,-87.6528695,17z/data=!4m9!4m8!1m0!1m5!1m1!1s0x880fd3196e269cbf:0x1caabcbc4893f0da!2m2!1d-87.6506755!2d41.9201486!3e0?hl=es-ES">Go</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="m-5 card-school-x3">
+
+                <div class="card-deck">
+
+                    <div class="mt-4 card-info card">
+
+                        <img class="card-infi-pic" src="img/2018-01-26.jpg" class="card-img-top"
+                            alt="aj katzenmaier elementary school">
+                        <div class="card-body">
+                            <h5 class="card-title">Aj Katzenmaier Elementary </h5>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <strong>Location: </strong>
+                                <a class="maplink"
+                                    href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2969.656836443422!2d-87.6312603845582!3d41.90023667922044!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd34e07f6bac3%3A0x68a82e5d59952c86!2s24+W+Walton+St%2C+Chicago%2C+IL+60610%2C+Estats+Units+d'Am%C3%A8rica!5e0!3m2!1sca!2ses!4v1516266506557"
+                                    target="iframe_20">
+                                    <p class="text-center">24 W. Walton St., Chicago, IL 60610</p>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="card-body">
+
+                            <a class=" mb-3 btn btn-primary " data-toggle="collapse" href="#collapseExample20"
+                                role="button" aria-expanded="false" aria-controls="collapseExample20">
+                                Map
+                            </a>
+
+                            <div class="collapse" id="collapseExample20">
+                                <div>
+                                    <iframe
+                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2969.6540604261418!2d-87.63123908528188!3d41.90029637200517!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd34e07f6bac3%3A0x68a82e5d59952c86!2s24%20W%20Walton%20St%2C%20Chicago%2C%20IL%2060610%2C%20EE.%20UU.!5e0!3m2!1ses!2sar!4v1599949318601!5m2!1ses!2sar"
+                                        width="100%" height="300" frameborder="0" style="border:0;" name="iframe_20"
+                                        allowfullscreen="">
+                                    </iframe>
+                                    <a class="btn btn-primary w-100 mt-3"
+                                        href="https://www.google.com/maps/dir//24+W+Walton+St,+Chicago,+IL+60610,+EE.+UU./@41.900292,-87.62905,15z/data=!4m9!4m8!1m0!1m5!1m1!1s0x880fd34e07f6bac3:0x68a82e5d59952c86!2m2!1d-87.6290504!2d41.9002924!3e0?hl=es-ES">Go</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-4 card-info card">
+                        <img class="card-infi-pic" src="img/greenbay.jpg" class="card-img-top"
+                            alt="aj katzenmaier elementary school">
+                        <div class="card-body">
+                            <h5 class="card-title">Greenbay Elementary </h5>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <strong>Location: </strong>
+                                <a class="maplink"
+                                    href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2969.0250102229547!2d-87.64023704886938!3d41.913821071054805!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd34073f306a3%3A0x9e1726bbf8f23f0e!2s1734+N+Orleans+St%2C+Chicago%2C+IL+60614%2C+Estats+Units+d'Am%C3%A8rica!5e0!3m2!1sca!2ses!4v1516268459315"
+                                    target="iframe_21">
+                                    <p class="text-center">1734 N. Orleans St., Chicago, IL 60614</p>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="card-body">
+
+                            <a class="mb-3 btn btn-primary" data-toggle="collapse" href="#collapseExample21"
+                                role="button" aria-expanded="false" aria-controls="collapseExample">
+                                Map
+                            </a>
+
+                            <div class="collapse" id="collapseExample21">
+                                <div>
+                                    <iframe
+                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2969.025698674518!2d-87.64002798528132!3d41.91380627115933!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd34073f306a3%3A0x9e1726bbf8f23f0e!2s1734%20N%20Orleans%20St%2C%20Chicago%2C%20IL%2060614%2C%20EE.%20UU.!5e0!3m2!1ses!2sar!4v1599952381178!5m2!1ses!2sar"
+                                        width="100%" height="300" frameborder="0" style="border:0;" allowfullscreen=""
+                                        aria-hidden="false" tabindex="0" name="iframe_21">
+                                    </iframe>
+                                    <a class="btn btn-primary w-100 mt-3"
+                                        href="https://www.google.com/maps/dir//1734+N+Orleans+St,+Chicago,+IL+60614,+EE.+UU./@41.9138023,-87.6400333,17z/data=!4m9!4m8!1m0!1m5!1m1!1s0x880fd34073f306a3:0x9e1726bbf8f23f0e!2m2!1d-87.6378393!2d41.9138023!3e0?hl=es-ES">Go</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-4 card-info card">
+                        <a href=""></a>
+                        <img class="card-infi-pic" src="img/howard yeager.jpg" class="card-img-top"
+                            alt="aj katzenmaier elementary school">
+                        <div class="card-body">
+                            <h5 class="card-title">Howard A Yeager </h5>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <strong>Location: </strong>
+                                <a class="maplink"
+                                    href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2968.585497389483!2d-87.6651199488691!3d41.92326857046301!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd2e37f9b8d2d%3A0x62ad8b907dd755d6!2s2245+N+Southport+Ave%2C+Chicago%2C+IL+60614%2C+Estats+Units+d'Am%C3%A8rica!5e0!3m2!1sca!2ses!4v1516268626037"
+                                    target="iframe_22">
+                                    <p class="text-center">2245 N. Southport Ave., Chicago, IL 60614</p>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="card-body">
+                            <a class="mb-3 btn btn-primary" data-toggle="collapse" href="#collapseExample22"
+                                role="button" aria-expanded="false" aria-controls="collapseExample">
+                                Map
+                            </a>
+                            <div class="collapse" id="collapseExample22">
+                                <div>
+                                    <iframe
+                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2968.590722234574!2d-87.66531398528099!3d41.923156270573635!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd2e37f9b8d2d%3A0x62ad8b907dd755d6!2s2245%20N%20Southport%20Ave%2C%20Chicago%2C%20IL%2060614%2C%20EE.%20UU.!5e0!3m2!1ses!2sar!4v1599952594878!5m2!1ses!2sar"
+                                        width="100%" height="300" frameborder="0" style="border:0;" allowfullscreen=""
+                                        aria-hidden="false" tabindex="0" name="iframe_22">
+                                    </iframe>
+                                    <a class="btn btn-primary w-100 mt-3"
+                                        href="https://www.google.com/maps/dir//Howard+A+Yeager+Elementary,+W+Belden+Ave,+Chicago,+IL+60614,+Estados+Unidos/@41.923261,-87.6651155,17z/data=!4m9!4m8!1m0!1m5!1m1!1s0x880fd2e37f852467:0xb6cb22b2f0358874!2m2!1d-87.6629215!2d41.923261!3e0?hl=es-ES">Go</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="card-deck">
+
+                    <div class="mt-4 card-info card">
+                        <img class="card-infi-pic" src="img/Marjorie P Hart.jpg" class="card-img-top"
+                            alt="Marjorie P Hart elementary school">
+                        <div class="card-body">
+                            <h5 class="card-title">Marjorie P Hart</h5>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <strong>Location: </strong>
+                                <a class="maplink"
+                                    href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2968.2884810511996!2d-87.648164648869!3d41.929652070063376!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd30f2630e551%3A0x3e719e44a5cef714!2s2625+N+Orchard+St%2C+Chicago%2C+IL+60614%2C+Estats+Units+d'Am%C3%A8rica!5e0!3m2!1sca!2ses!4v1516268730624"
+                                    target="iframe_23">
+                                    <p class="text-center">2625 N. Orchard St., Chicago, IL 60614</p>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="card-body">
+
+                            <a class="mb-3 btn btn-primary" data-toggle="collapse" href="#collapseExample23"
+                                role="button" aria-expanded="false" aria-controls="collapseExample">
+                                Map
+                            </a>
+
+                            <div class="collapse" id="collapseExample23">
+                                <div>
+                                    <iframe
+                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2968.2917289530665!2d-87.64808628528077!3d41.92958227017117!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd30f2630e551%3A0x3e719e44a5cef714!2s2625%20N%20Orchard%20St%2C%20Chicago%2C%20IL%2060614%2C%20EE.%20UU.!5e0!3m2!1ses!2sar!4v1599952703320!5m2!1ses!2sar"
+                                        width="100%" height="300" frameborder="0" style="border:0;" allowfullscreen=""
+                                        aria-hidden="false" tabindex="0" name="iframe_23">
+                                    </iframe>
+                                    <a class="btn btn-primary w-100 mt-3"
+                                        href="https://www.google.com/maps/dir//2625+N+Orchard+St,+Chicago,+IL+60614,+EE.+UU./@41.9295783,-87.6480916,17z/data=!4m9!4m8!1m0!1m5!1m1!1s0x880fd30f2630e551:0x3e719e44a5cef714!2m2!1d-87.6458976!2d41.9295783!3e0?hl=es-ES">Go</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-4 card-info card">
+                        <img class="card-infi-pic" src="img/north elementary.jpg" class="card-img-top"
+                            alt="North Elementary school">
+                        <div class="card-body">
+                            <h5 class="card-title">North Elementary </h5>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <strong>Location: </strong>
+                                <a class="maplink"
+                                    href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2969.3362420820845!2d-87.64836374886953!3d41.90712997147392!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd33af13a8945%3A0xb6ad1ec2b6f379ba!2s1409+N+Ogden+Ave%2C+Chicago%2C+IL+60610%2C+Estats+Units+d'Am%C3%A8rica!5e0!3m2!1sca!2ses!4v1516268816053"
+                                    target="iframe_24">
+                                    <p class="text-center">1409 N. Ogden Ave., Chicago, IL 60610</p>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="card-body">
+
+                            <a class="mb-3 btn btn-primary" data-toggle="collapse" href="#collapseExample24"
+                                role="button" aria-expanded="false" aria-controls="collapseExample">
+                                Map
+                            </a>
+
+                            <div class="collapse" id="collapseExample24">
+                                <div>
+                                    <iframe
+                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2969.3562837029785!2d-87.64765898528162!3d41.90669907160427!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd33a674ca85d%3A0x9940c7163c4950c5!2s1409%20N%20Ogden%20Ave%2C%20Chicago%2C%20IL%2060610%2C%20EE.%20UU.!5e0!3m2!1ses!2sar!4v1599952881900!5m2!1ses!2sar"
+                                        width="100%" height="300" frameborder="0" style="border:0;" allowfullscreen=""
+                                        aria-hidden="false" tabindex="0" name="iframe_24">
+                                    </iframe>
+                                    <a class="btn btn-primary w-100 mt-3"
+                                        href="https://www.google.com/maps/dir//1409+N+Ogden+Ave,+Chicago,+IL+60610,+EE.+UU./@41.9066951,-87.6476643,17z/data=!4m9!4m8!1m0!1m5!1m1!1s0x880fd33a674ca85d:0x9940c7163c4950c5!2m2!1d-87.6454703!2d41.9066951!3e0?hl=es-ES">Go</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-4 card-info card">
+                        <img class="card-infi-pic" src="img/south elementary.jpg" class="card-img-top"
+                            alt="aj katzenmaier elementary school">
+                        <div class="card-body">
+                            <h5 class="card-title">South Elementary </h5>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <strong>Location: </strong>
+                                <a class="maplink"
+                                    href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2968.7489558126917!2d-87.65355064886923!3d41.91975517068314!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd3196fb41dc7%3A0x970be7f7d6336df5!2s2101+N+Fremont+St%2C+Chicago%2C+IL+60614%2C+Estats+Units+d'Am%C3%A8rica!5e0!3m2!1sca!2ses!4v1516268909486"
+                                    target="iframe_25">
+                                    <p class="text-center">2101 N. Fremont St., Chicago, IL 60614</p>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="card-body">
+
+                            <a class="mb-3 btn btn-primary" data-toggle="collapse" href="#collapseExample25"
+                                role="button" aria-expanded="false" aria-controls="collapseExample">
+                                Map
+                            </a>
+
+                            <div class="collapse" id="collapseExample25">
+                                <div>
+                                    <iframe
+                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2968.747764826545!2d-87.65355538528111!3d41.91978077078517!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd3196fb41dc7%3A0x970be7f7d6336df5!2s2101%20N%20Fremont%20St%2C%20Chicago%2C%20IL%2060614%2C%20EE.%20UU.!5e0!3m2!1ses!2sar!4v1599953079038!5m2!1ses!2sar"
+                                        width="100%" height="300" frameborder="0" style="border:0;" allowfullscreen=""
+                                        aria-hidden="false" tabindex="0" name="iframe_25">
+                                    </iframe>
+                                    <a class="btn btn-primary w-100 mt-3"
+                                        href="https://www.google.com/maps/dir//St+James+Lutheran+School,+2101+N+Fremont+St,+Chicago,+IL+60614,+Estados+Unidos/@41.9201486,-87.6528695,17z/data=!4m9!4m8!1m0!1m5!1m1!1s0x880fd3196e269cbf:0x1caabcbc4893f0da!2m2!1d-87.6506755!2d41.9201486!3e0?hl=es-ES">Go</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+        <div id="schedule-page">
+            <div class="table-responsive">
+                <table class=" table-schedule table-striped table-hover table bordered ">
+                    <tr>
+                        <th>SEPTEMBER</th>
+                        <th>Teams</th>
+                        <th>Location</th>
+                        <th>Times</th>
+                    </tr>
+                    <tr>
+                        <td rowspan="2">9/01</td>
+                        <td>U1 and U4</td>
+                        <td>
+                            <a data-toggle="collapse" href="#collapseExample1" role="button" aria-expanded="false"
+                                aria-controls="collapseExample1">
+                                Aj Katzenmaier Elementary
+                            </a>
+
+                            <div class="collapse" id="collapseExample1">
+
+                                <div>
+
+                                    <!-- Button trigger modal -->
+                                    <button type="button" class="mt-2 btn btn-primary w-100" data-toggle="modal"
+                                        data-target="#exampleModal-table-1">
+                                        info
+                                    </button>
+
+                                </div>
+
+                                <!-- Button chat -->
+                                <a class="chat-btn mt-2 btn btn-info w-100" v-on:click="sala('juego1')"
+                                    href="#">chat</a>
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="exampleModal-table-1" tabindex="-1"
+                                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-body">
+                                                <button type="button" class="btn btn-danger w-100"
+                                                    data-dismiss="modal">Close Window</button>
+                                                <div class=" card-info card mt-2" style="width: 100;">
+                                                    <img class="card-infi-pic" src="img/2018-01-26.jpg"
+                                                        class="card-img-top" alt="aj katzenmaier elementary school">
+                                                    <div class="card-body">
+                                                        <h5 class="card-title">Aj Katzenmaier Elementary </h5>
+                                                    </div>
+                                                    <ul class="list-group list-group-flush">
+                                                        <li class="list-group-item">
+                                                            <strong>Location: </strong>
+                                                            <a class="maplink"
+                                                                href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2969.656836443422!2d-87.6312603845582!3d41.90023667922044!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd34e07f6bac3%3A0x68a82e5d59952c86!2s24+W+Walton+St%2C+Chicago%2C+IL+60610%2C+Estats+Units+d'Am%C3%A8rica!5e0!3m2!1sca!2ses!4v1516266506557"
+                                                                target="iframe_1">
+                                                                <p class="text-center">24 W. Walton St., Chicago, IL
+                                                                    60610
+                                                                </p>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                    <div class="card-body">
+
+                                                        <iframe
+                                                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2969.6540604261418!2d-87.63123908528188!3d41.90029637200517!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd34e07f6bac3%3A0x68a82e5d59952c86!2s24%20W%20Walton%20St%2C%20Chicago%2C%20IL%2060610%2C%20EE.%20UU.!5e0!3m2!1ses!2sar!4v1599949318601!5m2!1ses!2sar"
+                                                            width="100%" height="300" frameborder="0" style="border:0;"
+                                                            name="iframe_1" allowfullscreen="">
+                                                        </iframe>
+                                                        <a class="btn btn-primary w-100 mt-3"
+                                                            href="https://www.google.com/maps/dir//24+W+Walton+St,+Chicago,+IL+60610,+EE.+UU./@41.900292,-87.62905,15z/data=!4m9!4m8!1m0!1m5!1m1!1s0x880fd34e07f6bac3:0x68a82e5d59952c86!2m2!1d-87.6290504!2d41.9002924!3e0?hl=es-ES">Go</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+
+                            </div>
+                        </td>
+                        <td>9:30 a.m.</td>
+                    </tr>
+                    <tr>
+                        <td>U3 and U2</td>
+                        <td>
+                            <a data-toggle="collapse" href="#collapseExample2" role="button" aria-expanded="false"
+                                aria-controls="collapseExample2">
+                                Greenbay Elementary
+                            </a>
+                            <div class="collapse" id="collapseExample2">
+                                <div>
+                                    <!-- Button trigger modal -->
+                                    <button type="button" class="mt-2 btn btn-primary w-100" data-toggle="modal"
+                                        data-target="#exampleModal-table-2">
+                                        info
+                                    </button>
+
+                                    <!-- Button chat -->
+                                    <a class="chat-btn mt-2 btn btn-info w-100" href="#"
+                                        v-on:click="sala('juego2')">chat</a>
+
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="exampleModal-table-2" tabindex="-1"
+                                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-body">
+                                                    <button type="button" class="btn btn-danger w-100"
+                                                        data-dismiss="modal">Close Window</button>
+                                                    <div class=" card-info card mt-2" style="width: 100;">
+                                                        <img class="card-infi-pic" src="img/greenbay.jpg"
+                                                            class="card-img-top" alt="aj katzenmaier elementary school">
+                                                        <div class="card-body">
+                                                            <h5 class="card-title">Greenbay Elementary </h5>
+                                                        </div>
+                                                        <ul class="list-group list-group-flush">
+                                                            <li class="list-group-item">
+                                                                <strong>Location: </strong>
+                                                                <a class="maplink"
+                                                                    href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2969.0250102229547!2d-87.64023704886938!3d41.913821071054805!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd34073f306a3%3A0x9e1726bbf8f23f0e!2s1734+N+Orleans+St%2C+Chicago%2C+IL+60614%2C+Estats+Units+d'Am%C3%A8rica!5e0!3m2!1sca!2ses!4v1516268459315"
+                                                                    target="iframe_2">
+                                                                    <p class="text-center">1734 N. Orleans St., Chicago,
+                                                                        IL
+                                                                        60614</p>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                        <div class="card-body">
+
+                                                            <iframe
+                                                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2969.025698674518!2d-87.64002798528132!3d41.91380627115933!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd34073f306a3%3A0x9e1726bbf8f23f0e!2s1734%20N%20Orleans%20St%2C%20Chicago%2C%20IL%2060614%2C%20EE.%20UU.!5e0!3m2!1ses!2sar!4v1599952381178!5m2!1ses!2sar"
+                                                                width="100%" height="300" frameborder="0"
+                                                                style="border:0;" allowfullscreen="" aria-hidden="false"
+                                                                tabindex="0" name="iframe_2">
+                                                            </iframe>
+                                                            <a class="btn btn-primary w-100 mt-3"
+                                                                href="https://www.google.com/maps/dir//1734+N+Orleans+St,+Chicago,+IL+60614,+EE.+UU./@41.9138023,-87.6400333,17z/data=!4m9!4m8!1m0!1m5!1m1!1s0x880fd34073f306a3:0x9e1726bbf8f23f0e!2m2!1d-87.6378393!2d41.9138023!3e0?hl=es-ES">Go</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>1:00 p.m.</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2">9/08</td>
+                        <td>U5 and U6</td>
+                        <td>
+                            <a data-toggle="collapse" href="#collapseExample3" role="button" aria-expanded="false"
+                                aria-controls="collapseExample3">
+                                Howard Yeager
+                            </a>
+                            <div class="collapse" id="collapseExample3">
+                                <div>
+                                    <!-- Button trigger modal -->
+                                    <button type="button" class="mt-2 btn btn-primary w-100" data-toggle="modal"
+                                        data-target="#exampleModal-table-3">
+                                        info
+                                    </button>
+
+                                    <!-- Button chat -->
+                                    <a class="chat-btn mt-2 btn btn-info w-100" href="#"
+                                        v-on:click="sala('juego3')">chat</a>
+
+
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="exampleModal-table-3" tabindex="-1"
+                                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-body">
+                                                    <button type="button" class="btn btn-danger w-100"
+                                                        data-dismiss="modal">Close Window</button>
+                                                    <div class=" card-info card mt-2" style="width: 100;">
+                                                        <img class="card-infi-pic" src="img/howard yeager.jpg"
+                                                            class="card-img-top" alt="aj katzenmaier elementary school">
+                                                        <div class="card-body">
+                                                            <h5 class="card-title">Howard Yeager </h5>
+                                                        </div>
+                                                        <ul class="list-group list-group-flush">
+                                                            <li class="list-group-item">
+                                                                <strong>Location: </strong>
+                                                                <a class="maplink"
+                                                                    href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2968.585497389483!2d-87.6651199488691!3d41.92326857046301!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd2e37f9b8d2d%3A0x62ad8b907dd755d6!2s2245+N+Southport+Ave%2C+Chicago%2C+IL+60614%2C+Estats+Units+d'Am%C3%A8rica!5e0!3m2!1sca!2ses!4v1516268626037"
+                                                                    target="iframe_3">
+                                                                    <p class="text-center">2245 N. Southport Ave.,
+                                                                        Chicago,
+                                                                        IL 60614</p>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                        <div class="card-body">
+
+                                                            <iframe
+                                                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2968.590722234574!2d-87.66531398528099!3d41.923156270573635!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd2e37f9b8d2d%3A0x62ad8b907dd755d6!2s2245%20N%20Southport%20Ave%2C%20Chicago%2C%20IL%2060614%2C%20EE.%20UU.!5e0!3m2!1ses!2sar!4v1599952594878!5m2!1ses!2sar"
+                                                                width="100%" height="300" frameborder="0"
+                                                                style="border:0;" allowfullscreen="" aria-hidden="false"
+                                                                tabindex="0" name="iframe_3">
+                                                            </iframe>
+                                                            <a class="btn btn-primary w-100 mt-3"
+                                                                href="https://www.google.com/maps/dir//Howard+A+Yeager+Elementary,+W+Belden+Ave,+Chicago,+IL+60614,+Estados+Unidos/@41.923261,-87.6651155,17z/data=!4m9!4m8!1m0!1m5!1m1!1s0x880fd2e37f852467:0xb6cb22b2f0358874!2m2!1d-87.6629215!2d41.923261!3e0?hl=es-ES">Go</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>9:30 a.m.</td>
+                    </tr>
+                    <tr>
+                        <td>U6 and U1</td>
+                        <td>
+                            <a data-toggle="collapse" href="#collapseExample4" role="button" aria-expanded="false"
+                                aria-controls="collapseExample4">
+                                Marjorie P Hart
+                            </a>
+                            <div class="collapse" id="collapseExample4">
+                                <div>
+                                    <!-- Button trigger modal -->
+                                    <button type="button" class="mt-2 btn btn-primary  w-100" data-toggle="modal"
+                                        data-target="#exampleModal-table-4">
+                                        info
+                                    </button>
+
+
+                                    <!-- Button chat -->
+                                    <a class="chat-btn mt-2 btn btn-info w-100" href="#"
+                                        v-on:click="sala('juego4')">chat</a>
+
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="exampleModal-table-4" tabindex="-1"
+                                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-body">
+                                                    <button type="button" class="btn btn-danger w-100"
+                                                        data-dismiss="modal">Close Window</button>
+                                                    <div class=" card-info card mt-2" style="width: 100;">
+                                                        <img class="card-infi-pic" src="img/Marjorie P Hart.jpg"
+                                                            class="card-img-top" alt="aj katzenmaier elementary school">
+                                                        <div class="card-body">
+                                                            <h5 class="card-title">Marjorie P Hart </h5>
+                                                        </div>
+                                                        <ul class="list-group list-group-flush">
+                                                            <li class="list-group-item">
+                                                                <strong>Location: </strong>
+                                                                <a class="maplink"
+                                                                    href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2968.2884810511996!2d-87.648164648869!3d41.929652070063376!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd30f2630e551%3A0x3e719e44a5cef714!2s2625+N+Orchard+St%2C+Chicago%2C+IL+60614%2C+Estats+Units+d'Am%C3%A8rica!5e0!3m2!1sca!2ses!4v1516268730624"
+                                                                    target="iframe_4">
+                                                                    <p class="text-center">2625 N. Orchard St., Chicago,
+                                                                        IL
+                                                                        60614</p>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                        <div class="card-body">
+
+                                                            <iframe
+                                                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2968.2917289530665!2d-87.64808628528077!3d41.92958227017117!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd30f2630e551%3A0x3e719e44a5cef714!2s2625%20N%20Orchard%20St%2C%20Chicago%2C%20IL%2060614%2C%20EE.%20UU.!5e0!3m2!1ses!2sar!4v1599952703320!5m2!1ses!2sar"
+                                                                width="100%" height="300" frameborder="0"
+                                                                style="border:0;" allowfullscreen="" aria-hidden="false"
+                                                                tabindex="0" name="iframe_4">
+                                                            </iframe>
+                                                            <a class="btn btn-primary w-100 mt-3"
+                                                                href="https://www.google.com/maps/dir//2625+N+Orchard+St,+Chicago,+IL+60614,+EE.+UU./@41.9295783,-87.6480916,17z/data=!4m9!4m8!1m0!1m5!1m1!1s0x880fd30f2630e551:0x3e719e44a5cef714!2m2!1d-87.6458976!2d41.9295783!3e0?hl=es-ES">Go</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>1:00 p.m.</td>
+                    <tr>
+                        <td rowspan="2">9/15</td>
+                        <td>U2 and U4</td>
+                        <td>
+                            <a data-toggle="collapse" href="#collapseExample_table-5" role="button"
+                                aria-expanded="false" aria-controls="collapseExample-table-5">
+                                North Elementary
+                            </a>
+                            <div class="collapse" id="collapseExample_table-5">
+                                <div>
+                                    <!-- Button trigger modal -->
+                                    <button type="button" class="mt-2 btn btn-primary w-100" data-toggle="modal"
+                                        data-target="#exampleModal5">
+                                        info
+                                    </button>
+                                    <!-- Modal -->
+
+                                    <!-- Button chat -->
+                                    <a class="chat-btn mt-2 btn btn-info w-100" href="#"
+                                        v-on:click="sala('juego5')">chat</a>
+
+
+                                    <div class="modal fade" id="exampleModal5" tabindex="-1"
+                                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-body">
+                                                    <button type="button" class="btn btn-danger w-100"
+                                                        data-dismiss="modal">Close Window</button>
+                                                    <div class=" card-info card mt-2" style="width: 100;">
+                                                        <img class="card-infi-pic" src="img/north elementary.jpg"
+                                                            class="card-img-top" alt="aj katzenmaier elementary school">
+                                                        <div class="card-body">
+                                                            <h5 class="card-title">North Elementary </h5>
+                                                        </div>
+                                                        <ul class="list-group list-group-flush">
+                                                            <li class="list-group-item">
+                                                                <strong>Location: </strong>
+                                                                <a class="maplink"
+                                                                    href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2969.3362420820845!2d-87.64836374886953!3d41.90712997147392!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd33af13a8945%3A0xb6ad1ec2b6f379ba!2s1409+N+Ogden+Ave%2C+Chicago%2C+IL+60610%2C+Estats+Units+d'Am%C3%A8rica!5e0!3m2!1sca!2ses!4v1516268816053"
+                                                                    target="iframe_5">
+                                                                    <p class="text-center">1409 N. Ogden Ave., Chicago,
+                                                                        IL
+                                                                        60610</p>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                        <div class="card-body">
+
+                                                            <iframe
+                                                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2969.3562837029785!2d-87.64765898528162!3d41.90669907160427!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd33a674ca85d%3A0x9940c7163c4950c5!2s1409%20N%20Ogden%20Ave%2C%20Chicago%2C%20IL%2060610%2C%20EE.%20UU.!5e0!3m2!1ses!2sar!4v1599952881900!5m2!1ses!2sar"
+                                                                width="100%" height="300" frameborder="0"
+                                                                style="border:0;" allowfullscreen="" aria-hidden="false"
+                                                                tabindex="0" name="iframe_5">
+                                                            </iframe>
+                                                            <a class="btn btn-primary w-100 mt-3"
+                                                                href="https://www.google.com/maps/dir//1409+N+Ogden+Ave,+Chicago,+IL+60610,+EE.+UU./@41.9066951,-87.6476643,17z/data=!4m9!4m8!1m0!1m5!1m1!1s0x880fd33a674ca85d:0x9940c7163c4950c5!2m2!1d-87.6454703!2d41.9066951!3e0?hl=es-ES">Go</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>9:30 a.m.</td>
+                    </tr>
+                    <tr>
+                        <td>U3 and U5</td>
+                        <td>
+                            <a data-toggle="collapse" href="#collapseExample6" role="button" aria-expanded="false"
+                                aria-controls="collapseExample6">
+                                Aj Katzenmaier Elementary
+                            </a>
+                            <div class="collapse" id="collapseExample6">
+                                <div>
+                                    <!-- Button trigger modal -->
+                                    <button type="button" class="mt-2 btn btn-primary w-100" data-toggle="modal"
+                                        data-target="#exampleModal-table-6">
+                                        info
+                                    </button>
+                                    <!-- Modal -->
+
+                                    <!-- Button chat -->
+                                    <a class="chat-btn mt-2 btn btn-info w-100" href="#"
+                                        v-on:click="sala('juego6')">chat</a>
+
+
+                                    <div class="modal fade" id="exampleModal-table-6" tabindex="-1"
+                                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-body">
+                                                    <button type="button" class="btn btn-danger w-100"
+                                                        data-dismiss="modal">Close Window</button>
+                                                    <div class=" card-info card mt-2" style="width: 100;">
+                                                        <img class="card-infi-pic" src="img/2018-01-26.jpg"
+                                                            class="card-img-top" alt="aj katzenmaier elementary school">
+                                                        <div class="card-body">
+                                                            <h5 class="card-title">Aj Katzenmaier Elementary </h5>
+                                                        </div>
+                                                        <ul class="list-group list-group-flush">
+                                                            <li class="list-group-item">
+                                                                <strong>Location: </strong>
+                                                                <a class="maplink"
+                                                                    href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2969.656836443422!2d-87.6312603845582!3d41.90023667922044!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd34e07f6bac3%3A0x68a82e5d59952c86!2s24+W+Walton+St%2C+Chicago%2C+IL+60610%2C+Estats+Units+d'Am%C3%A8rica!5e0!3m2!1sca!2ses!4v1516266506557"
+                                                                    target="iframe_6">
+                                                                    <p class="text-center">24 W. Walton St., Chicago, IL
+                                                                        60610</p>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                        <div class="card-body">
+
+                                                            <iframe
+                                                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2969.6540604261418!2d-87.63123908528188!3d41.90029637200517!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd34e07f6bac3%3A0x68a82e5d59952c86!2s24%20W%20Walton%20St%2C%20Chicago%2C%20IL%2060610%2C%20EE.%20UU.!5e0!3m2!1ses!2sar!4v1599949318601!5m2!1ses!2sar"
+                                                                width="100%" height="300" frameborder="0"
+                                                                style="border:0;" name="iframe_6" allowfullscreen="">
+                                                            </iframe>
+                                                            <a class="btn btn-primary w-100 mt-3"
+                                                                href="https://www.google.com/maps/dir//24+W+Walton+St,+Chicago,+IL+60610,+EE.+UU./@41.900292,-87.62905,15z/data=!4m9!4m8!1m0!1m5!1m1!1s0x880fd34e07f6bac3:0x68a82e5d59952c86!2m2!1d-87.6290504!2d41.9002924!3e0?hl=es-ES">Go</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>1:00 p.m.</td>
+                    <tr>
+                        <td rowspan="2">9/22</td>
+                        <td>U1 and U3</td>
+                        <td>
+                            <a data-toggle="collapse" href="#collapseExample7" role="button" aria-expanded="false"
+                                aria-controls="collapseExample7">
+                                South Elementary
+                            </a>
+                            <div class="collapse" id="collapseExample7">
+                                <div>
+                                    <!-- Button trigger modal -->
+                                    <button type="button" class="mt-2 btn btn-primary  w-100" data-toggle="modal"
+                                        data-target="#exampleModal-table-7">
+                                        info
+                                    </button>
+                                    <!-- Modal -->
+
+                                    <!-- Button chat -->
+                                    <a class="chat-btn mt-2 btn btn-info w-100" href="#"
+                                        v-on:click="sala('juego7')">chat</a>
+
+
+                                    <div class="modal fade" id="exampleModal-table-7" tabindex="-1"
+                                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-body">
+                                                    <button type="button" class="btn btn-danger w-100"
+                                                        data-dismiss="modal">Close Window</button>
+                                                    <div class=" card-info card mt-2" style="width: 100;">
+                                                        <img class="card-infi-pic" src="img/south elementary.jpg"
+                                                            class="card-img-top" alt="aj katzenmaier elementary school">
+                                                        <div class="card-body">
+                                                            <h5 class="card-title">South Elementary </h5>
+                                                        </div>
+                                                        <ul class="list-group list-group-flush">
+                                                            <li class="list-group-item">
+                                                                <strong>Location: </strong>
+                                                                <a class="maplink"
+                                                                    href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2968.7489558126917!2d-87.65355064886923!3d41.91975517068314!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd3196fb41dc7%3A0x970be7f7d6336df5!2s2101+N+Fremont+St%2C+Chicago%2C+IL+60614%2C+Estats+Units+d'Am%C3%A8rica!5e0!3m2!1sca!2ses!4v1516268909486"
+                                                                    target="iframe_7">
+                                                                    <p class="text-center">2101 N. Fremont St., Chicago,
+                                                                        IL
+                                                                        60614</p>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                        <div class="card-body">
+
+                                                            <iframe
+                                                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2968.747764826545!2d-87.65355538528111!3d41.91978077078517!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd3196fb41dc7%3A0x970be7f7d6336df5!2s2101%20N%20Fremont%20St%2C%20Chicago%2C%20IL%2060614%2C%20EE.%20UU.!5e0!3m2!1ses!2sar!4v1599953079038!5m2!1ses!2sar"
+                                                                width="100%" height="300" frameborder="0"
+                                                                style="border:0;" allowfullscreen="" aria-hidden="false"
+                                                                tabindex="0" name="iframe_7">
+                                                            </iframe>
+                                                            <a class="btn btn-primary w-100 mt-3"
+                                                                href="https://www.google.com/maps/dir//St+James+Lutheran+School,+2101+N+Fremont+St,+Chicago,+IL+60614,+Estados+Unidos/@41.9201486,-87.6528695,17z/data=!4m9!4m8!1m0!1m5!1m1!1s0x880fd3196e269cbf:0x1caabcbc4893f0da!2m2!1d-87.6506755!2d41.9201486!3e0?hl=es-ES">Go</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>9:30 a.m.</td>
+                    </tr>
+                    <tr>
+                        <td>U2 and U6</td>
+                        <td>
+                            <a data-toggle="collapse" href="#collapseExample8" role="button" aria-expanded="false"
+                                aria-controls="collapseExample8">
+                                Howard Yeager
+                            </a>
+                            <div class="collapse" id="collapseExample8">
+                                <div>
+                                    <!-- Button trigger modal -->
+                                    <button type="button" class="mt-2 btn btn-primary  w-100" data-toggle="modal"
+                                        data-target="#exampleModal-table-8">
+                                        info
+                                    </button>
+                                    <!-- Modal -->
+
+                                    <!-- Button chat -->
+                                    <a class="chat-btn mt-2 btn btn-info w-100" href="#"
+                                        v-on:click="sala('juego8')">chat</a>
+
+
+                                    <div class="modal fade" id="exampleModal-table-8" tabindex="-1"
+                                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-body">
+                                                    <button type="button" class="btn btn-danger w-100"
+                                                        data-dismiss="modal">Close Window</button>
+                                                    <div class=" card-info card mt-2" style="width: 100;">
+                                                        <img class="card-infi-pic" src="img/howard yeager.jpg"
+                                                            class="card-img-top" alt="aj katzenmaier elementary school">
+                                                        <div class="card-body">
+                                                            <h5 class="card-title">Howard Yeager </h5>
+                                                        </div>
+                                                        <ul class="list-group list-group-flush">
+                                                            <li class="list-group-item">
+                                                                <strong>Location: </strong>
+                                                                <a class="maplink"
+                                                                    href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2968.585497389483!2d-87.6651199488691!3d41.92326857046301!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd2e37f9b8d2d%3A0x62ad8b907dd755d6!2s2245+N+Southport+Ave%2C+Chicago%2C+IL+60614%2C+Estats+Units+d'Am%C3%A8rica!5e0!3m2!1sca!2ses!4v1516268626037"
+                                                                    target="iframe_8">
+                                                                    <p class="text-center">2245 N. Southport Ave.,
+                                                                        Chicago,
+                                                                        IL 60614</p>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                        <div class="card-body">
+
+                                                            <iframe
+                                                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2968.590722234574!2d-87.66531398528099!3d41.923156270573635!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd2e37f9b8d2d%3A0x62ad8b907dd755d6!2s2245%20N%20Southport%20Ave%2C%20Chicago%2C%20IL%2060614%2C%20EE.%20UU.!5e0!3m2!1ses!2sar!4v1599952594878!5m2!1ses!2sar"
+                                                                width="100%" height="300" frameborder="0"
+                                                                style="border:0;" allowfullscreen="" aria-hidden="false"
+                                                                tabindex="0" name="iframe_8">
+                                                            </iframe>
+                                                            <a class="btn btn-primary w-100 mt-3"
+                                                                href="https://www.google.com/maps/dir//Howard+A+Yeager+Elementary,+W+Belden+Ave,+Chicago,+IL+60614,+Estados+Unidos/@41.923261,-87.6651155,17z/data=!4m9!4m8!1m0!1m5!1m1!1s0x880fd2e37f852467:0xb6cb22b2f0358874!2m2!1d-87.6629215!2d41.923261!3e0?hl=es-ES">Go</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>1:00 p.m.</td>
+                    <tr>
+                        <td>9/29</td>
+                        <td>U4 and U5</td>
+                        <td>
+                            <a data-toggle="collapse" href="#collapseExample9" role="button" aria-expanded="false"
+                                aria-controls="collapseExample9">
+                                Greenbay Elementary
+                            </a>
+                            <div class="collapse" id="collapseExample9">
+                                <div>
+                                    <!-- Button trigger modal -->
+                                    <button type="button" class="mt-2 btn btn-primary  w-100" data-toggle="modal"
+                                        data-target="#exampleModal-table-9">
+                                        info
+                                    </button>
+                                    <!-- Modal -->
+
+                                    <!-- Button chat -->
+                                    <a class="chat-btn mt-2 btn btn-info w-100" href="#"
+                                        v-on:click="sala('juego9')">chat</a>
+
+
+                                    <div class="modal fade" id="exampleModal-table-9" tabindex="-1"
+                                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-body">
+                                                    <button type="button" class="btn btn-danger w-100"
+                                                        data-dismiss="modal">Close Window</button>
+                                                    <div class=" card-info card mt-2" style="width: 100;">
+                                                        <img class="card-infi-pic" src="img/greenbay.jpg"
+                                                            class="card-img-top" alt="aj katzenmaier elementary school">
+                                                        <div class="card-body">
+                                                            <h5 class="card-title">Greenbay Elementary </h5>
+                                                        </div>
+                                                        <ul class="list-group list-group-flush">
+                                                            <li class="list-group-item">
+                                                                <strong>Location: </strong>
+                                                                <a class="maplink"
+                                                                    href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2969.0250102229547!2d-87.64023704886938!3d41.913821071054805!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd34073f306a3%3A0x9e1726bbf8f23f0e!2s1734+N+Orleans+St%2C+Chicago%2C+IL+60614%2C+Estats+Units+d'Am%C3%A8rica!5e0!3m2!1sca!2ses!4v1516268459315"
+                                                                    target="iframe_9">
+                                                                    <p class="text-center">1734 N. Orleans St., Chicago,
+                                                                        IL
+                                                                        60614</p>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                        <div class="card-body">
+
+                                                            <iframe
+                                                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2969.025698674518!2d-87.64002798528132!3d41.91380627115933!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd34073f306a3%3A0x9e1726bbf8f23f0e!2s1734%20N%20Orleans%20St%2C%20Chicago%2C%20IL%2060614%2C%20EE.%20UU.!5e0!3m2!1ses!2sar!4v1599952381178!5m2!1ses!2sar"
+                                                                width="100%" height="300" frameborder="0"
+                                                                style="border:0;" allowfullscreen="" aria-hidden="false"
+                                                                tabindex="0" name="iframe_9">
+                                                            </iframe>
+                                                            <a class="btn btn-primary w-100 mt-3"
+                                                                href="https://www.google.com/maps/dir//1734+N+Orleans+St,+Chicago,+IL+60614,+EE.+UU./@41.9138023,-87.6400333,17z/data=!4m9!4m8!1m0!1m5!1m1!1s0x880fd34073f306a3:0x9e1726bbf8f23f0e!2m2!1d-87.6378393!2d41.9138023!3e0?hl=es-ES">Go</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>9:30 a.m.</td>
+                    </tr>
+                    <tr>
+                        <th>OCTOBER</th>
+                        <th>Teams</th>
+                        <th>Location</th>
+                        <th>Times</th>
+                    </tr>
+                    <tr>
+                        <td rowspan="2">10/06</td>
+                        <td>U2 and U5</td>
+                        <td>
+                            <a data-toggle="collapse" href="#collapseExample10" role="button" aria-expanded="false"
+                                aria-controls="collapseExample10">
+                                Marjorie P Hart-table-
+                            </a>
+                            <div class="collapse" id="collapseExample10">
+                                <div>
+                                    <!-- Button trigger modal -->
+                                    <button type="button" class="mt-2 btn btn-primary  w-100" data-toggle="modal"
+                                        data-target="#exampleModal-table-10">
+                                        info
+                                    </button>
+
+                                    <!-- Button chat -->
+                                    <a class="chat-btn mt-2 btn btn-info w-100" href="#"
+                                        v-on:click="sala('juego10')">chat</a>
+
+
+                                    <!-- Modal -->
+
+                                    <div class="modal fade" id="exampleModal-table-10" tabindex="-1"
+                                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-body">
+                                                    <button type="button" class="btn btn-danger w-100"
+                                                        data-dismiss="modal">Close Window</button>
+                                                    <div class=" card-info card mt-2" style="width: 100;">
+                                                        <img class="card-infi-pic" src="img/Marjorie P Hart.jpg"
+                                                            class="card-img-top" alt="aj katzenmaier elementary school">
+                                                        <div class="card-body">
+                                                            <h5 class="card-title">Marjorie P Hart </h5>
+                                                        </div>
+                                                        <ul class="list-group list-group-flush">
+                                                            <li class="list-group-item">
+                                                                <strong>Location: </strong>
+                                                                <a class="maplink"
+                                                                    href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2968.2884810511996!2d-87.648164648869!3d41.929652070063376!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd30f2630e551%3A0x3e719e44a5cef714!2s2625+N+Orchard+St%2C+Chicago%2C+IL+60614%2C+Estats+Units+d'Am%C3%A8rica!5e0!3m2!1sca!2ses!4v1516268730624"
+                                                                    target="iframe_10">
+                                                                    <p class="text-center">2625 N. Orchard St., Chicago,
+                                                                        IL
+                                                                        60614</p>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                        <div class="card-body">
+
+                                                            <iframe
+                                                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2968.2917289530665!2d-87.64808628528077!3d41.92958227017117!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd30f2630e551%3A0x3e719e44a5cef714!2s2625%20N%20Orchard%20St%2C%20Chicago%2C%20IL%2060614%2C%20EE.%20UU.!5e0!3m2!1ses!2sar!4v1599952703320!5m2!1ses!2sar"
+                                                                width="100%" height="300" frameborder="0"
+                                                                style="border:0;" allowfullscreen="" aria-hidden="false"
+                                                                tabindex="0" name="iframe_10">
+                                                            </iframe>
+                                                            <a class="btn btn-primary w-100 mt-3"
+                                                                href="https://www.google.com/maps/dir//2625+N+Orchard+St,+Chicago,+IL+60614,+EE.+UU./@41.9295783,-87.6480916,17z/data=!4m9!4m8!1m0!1m5!1m1!1s0x880fd30f2630e551:0x3e719e44a5cef714!2m2!1d-87.6458976!2d41.9295783!3e0?hl=es-ES">Go</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>9:30 a.m.</td>
+                    </tr>
+                    <tr>
+                        <td>U1 and U6</td>
+                        <td>
+                            <a data-toggle="collapse" href="#collapseExample11" role="button" aria-expanded="false"
+                                aria-controls="collapseExample11">
+                                South Elementary
+                            </a>
+                            <div class="collapse" id="collapseExample11">
+                                <div>
+                                    <!-- Button trigger modal -->
+                                    <button type="button" class="mt-2 btn btn-primary  w-100" data-toggle="modal"
+                                        data-target="#exampleModal-table-11">
+                                        info
+                                    </button>
+
+                                    <!-- Button chat -->
+                                    <a class="chat-btn mt-2 btn btn-info w-100" href="#"
+                                        v-on:click="sala('juego11')">chat</a>
+
+
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="exampleModal-table-11" tabindex="-1"
+                                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-body">
+                                                    <button type="button" class="btn btn-danger w-100"
+                                                        data-dismiss="modal">Close Window</button>
+                                                    <div class=" card-info card mt-2" style="width: 100;">
+                                                        <img class="card-infi-pic" src="img/south elementary.jpg"
+                                                            class="card-img-top" alt="aj katzenmaier elementary school">
+                                                        <div class="card-body">
+                                                            <h5 class="card-title">South Elementary </h5>
+                                                        </div>
+                                                        <ul class="list-group list-group-flush">
+                                                            <li class="list-group-item">
+                                                                <strong>Location: </strong>
+                                                                <a class="maplink"
+                                                                    href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2968.7489558126917!2d-87.65355064886923!3d41.91975517068314!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd3196fb41dc7%3A0x970be7f7d6336df5!2s2101+N+Fremont+St%2C+Chicago%2C+IL+60614%2C+Estats+Units+d'Am%C3%A8rica!5e0!3m2!1sca!2ses!4v1516268909486"
+                                                                    target="iframe_11">
+                                                                    <p class="text-center">2101 N. Fremont St., Chicago,
+                                                                        IL
+                                                                        60614</p>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                        <div class="card-body">
+
+                                                            <iframe
+                                                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2968.747764826545!2d-87.65355538528111!3d41.91978077078517!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd3196fb41dc7%3A0x970be7f7d6336df5!2s2101%20N%20Fremont%20St%2C%20Chicago%2C%20IL%2060614%2C%20EE.%20UU.!5e0!3m2!1ses!2sar!4v1599953079038!5m2!1ses!2sar"
+                                                                width="100%" height="300" frameborder="0"
+                                                                style="border:0;" allowfullscreen="" aria-hidden="false"
+                                                                tabindex="0" name="iframe_11">
+                                                            </iframe>
+                                                            <a class="btn btn-primary w-100 mt-3"
+                                                                href="https://www.google.com/maps/dir//St+James+Lutheran+School,+2101+N+Fremont+St,+Chicago,+IL+60614,+Estados+Unidos/@41.9201486,-87.6528695,17z/data=!4m9!4m8!1m0!1m5!1m1!1s0x880fd3196e269cbf:0x1caabcbc4893f0da!2m2!1d-87.6506755!2d41.9201486!3e0?hl=es-ES">Go</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>1:00 p.m.</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2">10/08</td>
+                        <td>U3 and U4</td>
+                        <td>
+                            <a data-toggle="collapse" href="#collapseExample12" role="button" aria-expanded="false"
+                                aria-controls="collapseExample12">
+                                Howard Yeager
+                            </a>
+                            <div class="collapse" id="collapseExample12">
+                                <div>
+                                    <!-- Button trigger modal -->
+                                    <button type="button" class="mt-2 btn btn-primary  w-100" data-toggle="modal"
+                                        data-target="#exampleModal-table12">
+                                        info
+                                    </button>
+
+                                    <!-- Button chat -->
+                                    <!-- Button chat -->
+                                    <a class="chat-btn mt-2 btn btn-info w-100" href="#"
+                                        v-on:click="sala('juego12')">chat</a>
+
+
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="exampleModal-table12" tabindex="-1"
+                                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-body">
+                                                    <button type="button" class="btn btn-danger w-100"
+                                                        data-dismiss="modal">Close Window</button>
+                                                    <div class=" card-info card mt-2" style="width: 100;">
+                                                        <img class="card-infi-pic" src="img/howard yeager.jpg"
+                                                            class="card-img-top" alt="aj katzenmaier elementary school">
+                                                        <div class="card-body">
+                                                            <h5 class="card-title">Howard Yeager </h5>
+                                                        </div>
+                                                        <ul class="list-group list-group-flush">
+                                                            <li class="list-group-item">
+                                                                <strong>Location: </strong>
+                                                                <a class="maplink"
+                                                                    href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2968.585497389483!2d-87.6651199488691!3d41.92326857046301!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd2e37f9b8d2d%3A0x62ad8b907dd755d6!2s2245+N+Southport+Ave%2C+Chicago%2C+IL+60614%2C+Estats+Units+d'Am%C3%A8rica!5e0!3m2!1sca!2ses!4v1516268626037"
+                                                                    target="iframe_12">
+                                                                    <p class="text-center">2245 N. Southport Ave.,
+                                                                        Chicago,
+                                                                        IL 60614</p>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                        <div class="card-body">
+
+                                                            <iframe
+                                                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2968.590722234574!2d-87.66531398528099!3d41.923156270573635!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd2e37f9b8d2d%3A0x62ad8b907dd755d6!2s2245%20N%20Southport%20Ave%2C%20Chicago%2C%20IL%2060614%2C%20EE.%20UU.!5e0!3m2!1ses!2sar!4v1599952594878!5m2!1ses!2sar"
+                                                                width="100%" height="300" frameborder="0"
+                                                                style="border:0;" allowfullscreen="" aria-hidden="false"
+                                                                tabindex="0" name="iframe_12">
+                                                            </iframe>
+                                                            <a class="btn btn-primary w-100 mt-3"
+                                                                href="https://www.google.com/maps/dir//Howard+A+Yeager+Elementary,+W+Belden+Ave,+Chicago,+IL+60614,+Estados+Unidos/@41.923261,-87.6651155,17z/data=!4m9!4m8!1m0!1m5!1m1!1s0x880fd2e37f852467:0xb6cb22b2f0358874!2m2!1d-87.6629215!2d41.923261!3e0?hl=es-ES">Go</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>9:30 a.m.</td>
+                    </tr>
+                    <tr>
+                        <td>U5 and U1</td>
+                        <td>
+                            <a data-toggle="collapse" href="#collapseExample13" role="button" aria-expanded="false"
+                                aria-controls="collapseExample13">
+                                Greenbay Elementary
+                            </a>
+                            <div class="collapse" id="collapseExample13">
+                                <div>
+                                    <!-- Button trigger modal -->
+                                    <button type="button" class="mt-2 btn btn-primary  w-100" data-toggle="modal"
+                                        data-target="#exampleModal-table-13">
+                                        info
+                                    </button>
+
+                                    <!-- Button chat -->
+                                    <a class="chat-btn mt-2 btn btn-info w-100" href="#"
+                                        v-on:click="sala('juego13')">chat</a>
+
+
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="exampleModal-table-13" tabindex="-1"
+                                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-body">
+                                                    <button type="button" class="btn btn-danger w-100"
+                                                        data-dismiss="modal">Close Window</button>
+                                                    <div class=" card-info card mt-2" style="width: 100;">
+                                                        <img class="card-infi-pic" src="img/greenbay.jpg"
+                                                            class="card-img-top" alt="aj katzenmaier elementary school">
+                                                        <div class="card-body">
+                                                            <h5 class="card-title">Greenbay Elementary </h5>
+                                                        </div>
+                                                        <ul class="list-group list-group-flush">
+                                                            <li class="list-group-item">
+                                                                <strong>Location: </strong>
+                                                                <a class="maplink"
+                                                                    href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2969.0250102229547!2d-87.64023704886938!3d41.913821071054805!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd34073f306a3%3A0x9e1726bbf8f23f0e!2s1734+N+Orleans+St%2C+Chicago%2C+IL+60614%2C+Estats+Units+d'Am%C3%A8rica!5e0!3m2!1sca!2ses!4v1516268459315"
+                                                                    target="iframe_13">
+                                                                    <p class="text-center">1734 N. Orleans St., Chicago,
+                                                                        IL
+                                                                        60614</p>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                        <div class="card-body">
+
+                                                            <iframe
+                                                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2969.025698674518!2d-87.64002798528132!3d41.91380627115933!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd34073f306a3%3A0x9e1726bbf8f23f0e!2s1734%20N%20Orleans%20St%2C%20Chicago%2C%20IL%2060614%2C%20EE.%20UU.!5e0!3m2!1ses!2sar!4v1599952381178!5m2!1ses!2sar"
+                                                                width="100%" height="300" frameborder="0"
+                                                                style="border:0;" allowfullscreen="" aria-hidden="false"
+                                                                tabindex="0" name="iframe_13">
+                                                            </iframe>
+                                                            <a class="btn btn-primary w-100 mt-3"
+                                                                href="https://www.google.com/maps/dir//1734+N+Orleans+St,+Chicago,+IL+60614,+EE.+UU./@41.9138023,-87.6400333,17z/data=!4m9!4m8!1m0!1m5!1m1!1s0x880fd34073f306a3:0x9e1726bbf8f23f0e!2m2!1d-87.6378393!2d41.9138023!3e0?hl=es-ES">Go</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>1:00 p.m.</td>
+                    <tr>
+                        <td rowspan="2">10/20</td>
+                        <td>U6 and U3</td>
+                        <td>
+                            <a data-toggle="collapse" href="#collapseExample14" role="button" aria-expanded="false"
+                                aria-controls="collapseExample14">
+                                North Elementary
+                            </a>
+                            <div class="collapse" id="collapseExample14">
+                                <div>
+                                    <!-- Button trigger modal -->
+                                    <button type="button" class="mt-2 btn btn-primary  w-100" data-toggle="modal"
+                                        data-target="#exampleModal-table14">
+                                        info
+                                    </button>
+
+                                    <!-- Button chat -->
+                                    <a class="chat-btn mt-2 btn btn-info w-100" href="#"
+                                        v-on:click="sala('juego14')">chat</a>
+
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="exampleModal-table14" tabindex="-1"
+                                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-body">
+                                                    <button type="button" class="btn btn-danger w-100"
+                                                        data-dismiss="modal">Close Window</button>
+                                                    <div class=" card-info card mt-2" style="width: 100;">
+                                                        <img class="card-infi-pic" src="img/north elementary.jpg"
+                                                            class="card-img-top" alt="aj katzenmaier elementary school">
+                                                        <div class="card-body">
+                                                            <h5 class="card-title">North Elementary </h5>
+                                                        </div>
+                                                        <ul class="list-group list-group-flush">
+                                                            <li class="list-group-item">
+                                                                <strong>Location: </strong>
+                                                                <a class="maplink"
+                                                                    href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2969.3362420820845!2d-87.64836374886953!3d41.90712997147392!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd33af13a8945%3A0xb6ad1ec2b6f379ba!2s1409+N+Ogden+Ave%2C+Chicago%2C+IL+60610%2C+Estats+Units+d'Am%C3%A8rica!5e0!3m2!1sca!2ses!4v1516268816053"
+                                                                    target="iframe_14">
+                                                                    <p class="text-center">1409 N. Ogden Ave., Chicago,
+                                                                        IL
+                                                                        60610</p>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                        <div class="card-body">
+
+                                                            <iframe
+                                                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2969.3562837029785!2d-87.64765898528162!3d41.90669907160427!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd33a674ca85d%3A0x9940c7163c4950c5!2s1409%20N%20Ogden%20Ave%2C%20Chicago%2C%20IL%2060610%2C%20EE.%20UU.!5e0!3m2!1ses!2sar!4v1599952881900!5m2!1ses!2sar"
+                                                                width="100%" height="300" frameborder="0"
+                                                                style="border:0;" allowfullscreen="" aria-hidden="false"
+                                                                tabindex="0" name="iframe_14">
+                                                            </iframe>
+                                                            <a class="btn btn-primary w-100 mt-3"
+                                                                href="https://www.google.com/maps/dir//1409+N+Ogden+Ave,+Chicago,+IL+60610,+EE.+UU./@41.9066951,-87.6476643,17z/data=!4m9!4m8!1m0!1m5!1m1!1s0x880fd33a674ca85d:0x9940c7163c4950c5!2m2!1d-87.6454703!2d41.9066951!3e0?hl=es-ES">Go</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>9:30 a.m.</td>
+                    </tr>
+                    <tr>
+                        <td>U2 and U4</td>
+                        <td>
+                            <a data-toggle="collapse" href="#collapseExample15" role="button" aria-expanded="false"
+                                aria-controls="collapseExample15">
+                                Marjorie P Hart
+                            </a>
+                            <div class="collapse" id="collapseExample15">
+                                <div>
+                                    <!-- Button trigger modal -->
+                                    <button type="button" class="mt-2 btn btn-primary  w-100" data-toggle="modal"
+                                        data-target="#exampleModal-table-15">
+                                        info
+                                    </button>
+
+                                    <!-- Button chat -->
+                                    <a class="chat-btn mt-2 btn btn-info w-100" href="#"
+                                        v-on:click="sala('juego15')">chat</a>
+
+
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="exampleModal-table-15" tabindex="-1"
+                                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-body">
+                                                    <button type="button" class="btn btn-danger w-100"
+                                                        data-dismiss="modal">Close Window</button>
+                                                    <div class=" card-info card mt-2" style="width: 100;">
+                                                        <img class="card-infi-pic" src="img/Marjorie P Hart.jpg"
+                                                            class="card-img-top" alt="aj katzenmaier elementary school">
+                                                        <div class="card-body">
+                                                            <h5 class="card-title">Marjorie P Hart </h5>
+                                                        </div>
+                                                        <ul class="list-group list-group-flush">
+                                                            <li class="list-group-item">
+                                                                <strong>Location: </strong>
+                                                                <a class="maplink"
+                                                                    href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2968.2884810511996!2d-87.648164648869!3d41.929652070063376!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd30f2630e551%3A0x3e719e44a5cef714!2s2625+N+Orchard+St%2C+Chicago%2C+IL+60614%2C+Estats+Units+d'Am%C3%A8rica!5e0!3m2!1sca!2ses!4v1516268730624"
+                                                                    target="iframe_15">
+                                                                    <p class="text-center">2625 N. Orchard St., Chicago,
+                                                                        IL
+                                                                        60614</p>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                        <div class="card-body">
+
+                                                            <iframe
+                                                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2968.2917289530665!2d-87.64808628528077!3d41.92958227017117!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd30f2630e551%3A0x3e719e44a5cef714!2s2625%20N%20Orchard%20St%2C%20Chicago%2C%20IL%2060614%2C%20EE.%20UU.!5e0!3m2!1ses!2sar!4v1599952703320!5m2!1ses!2sar"
+                                                                width="100%" height="300" frameborder="0"
+                                                                style="border:0;" allowfullscreen="" aria-hidden="false"
+                                                                tabindex="0" name="iframe_15">
+                                                            </iframe>
+                                                            <a class="btn btn-primary w-100 mt-3"
+                                                                href="https://www.google.com/maps/dir//2625+N+Orchard+St,+Chicago,+IL+60614,+EE.+UU./@41.9295783,-87.6480916,17z/data=!4m9!4m8!1m0!1m5!1m1!1s0x880fd30f2630e551:0x3e719e44a5cef714!2m2!1d-87.6458976!2d41.9295783!3e0?hl=es-ES">Go</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>1:00 p.m.</td>
+                    <tr>
+                        <td rowspan="2">10/27</td>
+                        <td>U3 and U1</td>
+                        <td>
+                            <a data-toggle="collapse" href="#collapseExample16" role="button" aria-expanded="false"
+                                aria-controls="collapseExample16">
+                                Aj Katzenmaier Elementary
+                            </a>
+                            <div class="collapse" id="collapseExample16">
+                                <div>
+                                    <!-- Button trigger modal -->
+                                    <button type="button" class="mt-2 btn btn-primary  w-100" data-toggle="modal"
+                                        data-target="#exampleModal-table-16">
+                                        info
+                                    </button>
+
+                                    <!-- Button chat -->
+                                    <a class="chat-btn mt-2 btn btn-info w-100" href="#"
+                                        v-on:click="sala('juego16')">chat</a>
+
+
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="exampleModal-table-16" tabindex="-1"
+                                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-body">
+                                                    <button type="button" class="btn btn-danger w-100"
+                                                        data-dismiss="modal">Close Window</button>
+                                                    <div class=" card-info card mt-2" style="width: 100;">
+                                                        <img class="card-infi-pic" src="img/2018-01-26.jpg"
+                                                            class="card-img-top" alt="aj katzenmaier elementary school">
+                                                        <div class="card-body">
+                                                            <h5 class="card-title">Aj Katzenmaier Elementary </h5>
+                                                        </div>
+                                                        <ul class="list-group list-group-flush">
+                                                            <li class="list-group-item">
+                                                                <strong>Location: </strong>
+                                                                <a class="maplink"
+                                                                    href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2969.656836443422!2d-87.6312603845582!3d41.90023667922044!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd34e07f6bac3%3A0x68a82e5d59952c86!2s24+W+Walton+St%2C+Chicago%2C+IL+60610%2C+Estats+Units+d'Am%C3%A8rica!5e0!3m2!1sca!2ses!4v1516266506557"
+                                                                    target="iframe_16">
+                                                                    <p class="text-center">24 W. Walton St., Chicago, IL
+                                                                        60610</p>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                        <div class="card-body">
+
+                                                            <iframe
+                                                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2969.6540604261418!2d-87.63123908528188!3d41.90029637200517!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd34e07f6bac3%3A0x68a82e5d59952c86!2s24%20W%20Walton%20St%2C%20Chicago%2C%20IL%2060610%2C%20EE.%20UU.!5e0!3m2!1ses!2sar!4v1599949318601!5m2!1ses!2sar"
+                                                                width="100%" height="300" frameborder="0"
+                                                                style="border:0;" name="iframe_16" allowfullscreen="">
+                                                            </iframe>
+                                                            <a class="btn btn-primary w-100 mt-3"
+                                                                href="https://www.google.com/maps/dir//24+W+Walton+St,+Chicago,+IL+60610,+EE.+UU./@41.900292,-87.62905,15z/data=!4m9!4m8!1m0!1m5!1m1!1s0x880fd34e07f6bac3:0x68a82e5d59952c86!2m2!1d-87.6290504!2d41.9002924!3e0?hl=es-ES">Go</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>9:30 a.m.</td>
+                    </tr>
+                    <tr>
+                        <td>U5 and U6</td>
+                        <td>
+                            <a data-toggle="collapse" href="#collapseExample17" role="button" aria-expanded="false"
+                                aria-controls="collapseExample17">
+                                Howard Yeager
+                            </a>
+                            <div class="collapse" id="collapseExample17">
+                                <div>
+                                    <!-- Button trigger modal -->
+                                    <button type="button" class="mt-2 btn btn-primary  w-100" data-toggle="modal"
+                                        data-target="#exampleModal-table-17">
+                                        info
+                                    </button>
+
+                                    <!-- Button chat -->
+                                    <a class="chat-btn mt-2 btn btn-info w-100" href="#"
+                                        v-on:click="sala('juego17')">chat</a>
+
+
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="exampleModal-table-17" tabindex="-1"
+                                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-body">
+                                                    <button type="button" class="btn btn-danger w-100"
+                                                        data-dismiss="modal">Close Window</button>
+                                                    <div class=" card-info card mt-2" style="width: 100;">
+                                                        <img class="card-infi-pic" src="img/howard yeager.jpg"
+                                                            class="card-img-top" alt="aj katzenmaier elementary school">
+                                                        <div class="card-body">
+                                                            <h5 class="card-title">Howard Yeager </h5>
+                                                        </div>
+                                                        <ul class="list-group list-group-flush">
+                                                            <li class="list-group-item">
+                                                                <strong>Location: </strong>
+                                                                <a class="maplink"
+                                                                    href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2968.585497389483!2d-87.6651199488691!3d41.92326857046301!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd2e37f9b8d2d%3A0x62ad8b907dd755d6!2s2245+N+Southport+Ave%2C+Chicago%2C+IL+60614%2C+Estats+Units+d'Am%C3%A8rica!5e0!3m2!1sca!2ses!4v1516268626037"
+                                                                    target="iframe_17">
+                                                                    <p class="text-center">2245 N. Southport Ave.,
+                                                                        Chicago,
+                                                                        IL 60614</p>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                        <div class="card-body">
+
+                                                            <iframe
+                                                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2968.590722234574!2d-87.66531398528099!3d41.923156270573635!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd2e37f9b8d2d%3A0x62ad8b907dd755d6!2s2245%20N%20Southport%20Ave%2C%20Chicago%2C%20IL%2060614%2C%20EE.%20UU.!5e0!3m2!1ses!2sar!4v1599952594878!5m2!1ses!2sar"
+                                                                width="100%" height="300" frameborder="0"
+                                                                style="border:0;" allowfullscreen="" aria-hidden="false"
+                                                                tabindex="0" name="iframe_17">
+                                                            </iframe>
+                                                            <a class="btn btn-primary w-100 mt-3"
+                                                                href="https://www.google.com/maps/dir//Howard+A+Yeager+Elementary,+W+Belden+Ave,+Chicago,+IL+60614,+Estados+Unidos/@41.923261,-87.6651155,17z/data=!4m9!4m8!1m0!1m5!1m1!1s0x880fd2e37f852467:0xb6cb22b2f0358874!2m2!1d-87.6629215!2d41.923261!3e0?hl=es-ES">Go</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>1:00 p.m.</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div id="chat-page" class="">
+
+            <!--reset sala and back to shedule button-->
+            <a class="ml-3 schedule-btn mt-2 btn btn-danger w-25 fixed-top" href="#"
+                v-on:click="reset"><strong>back</strong></a>
+
+                <!--display-->
+            <div class=" p-3 w-100 h-100 ">
+                
+                <p v-for="mensaje in mensajes" class="display-chat p-4 bg-light rounded border">{{mensaje.usuario}} : <br>   {{mensaje.texto}}
+                </p>
+
+            </div>
+
+            <div class=" input-chat d-flex m-auto w-100 p-2 fixed-bottom">
+
+                <!--input texto mensaje-->
+                <input id="prueba" v-model:value="mensaje" class="w-75" type="text" name="" id="">
+
+                <!--boton enviar-->
+                <button  class="w-25 btn btn-primary pl-3 " v-on:click="enviar">
+                    <strong> > </strong>
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+   
+
+
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-database.js"></script>
+
+
+
+
+    <!--bootstrap-->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <!--vue-->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!--local-->
+    <script src="js/logic.js"></script>
+
+</body>
+
+</html>

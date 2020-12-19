@@ -1,0 +1,159 @@
+body{
+    background-color: rgb(255, 255, 255);
+    padding-bottom: 50px;
+    padding-top: 50px;
+    
+}
+
+nav{
+    background-color: rgb(0, 55, 65);
+}
+
+.login-btn{
+    width: 25%;
+    
+}
+
+.register-btn{
+    width: 25%;
+    
+}
+
+.navbar-brand{
+    font-size: 25px; 
+    margin-right: 5em;
+}
+
+.nav-link{
+    margin-right: 2em;
+    margin-bottom: 15px;
+}
+
+.card-info{
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.658);
+}
+
+.table-schedule{
+    margin-top: 50px;
+}
+
+.schedule-banner{
+    background-color: rgb(1, 156, 22);
+    color: white;
+    padding: 30px;
+    margin-bottom: 10px;
+}
+
+.main-content{
+    padding: 10px;
+}
+
+.modal-content{
+    box-shadow: 0px 0px 10px black;
+}
+
+.checkbox-text{
+    color: white;
+}
+
+.home-page{
+    min-height: 100vh;
+    padding-top: 50px;
+}
+
+#chat-page{
+    margin-bottom: 50px;
+}
+
+.input-chat{
+   background-color: rgb(255, 255, 255);
+   
+}
+
+@media(orientation: landscape){
+    .carousel{
+        display: none;
+    }
+
+    .red-button{
+        display: none;
+    }
+
+    nav, footer{
+        background-color: rgb(207, 207, 207);
+        color: black;
+    }
+
+    .navbar-toggler{
+        background-color: rgb(102, 102, 102);
+    }
+}
+
+@media(orientation:portrait){
+    .red-button-landscape{
+        display: none;
+    }
+
+}
+
+@media(min-width:993px){
+
+    .mobile-form-btn{
+        display: none;
+    }
+
+    nav li{
+        font-size: 20px;
+    }
+
+    .logo{
+        display: none;
+    }
+
+    .card-school-x2{
+        display: none;
+    }
+
+    .carousel{
+        display: none;
+    }
+}
+
+
+
+@media(max-width:993px){
+
+    .form-register{
+        display: none;
+    }
+
+    .logo{
+        width: 200px;
+    }
+
+    .card-school-x3{
+        display: none;
+    }
+
+    .main-content-web{
+        display: none;
+    }
+
+    .red-button-portrait{
+        display: none;
+    }  
+}
+
+@media(max-width:570px){
+
+    .card-school-x2{
+        display: none;
+    }
+}
+
+@media(min-width:570px){
+
+    .carousel{
+        display: none;
+    }
+}
